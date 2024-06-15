@@ -1,0 +1,95 @@
+[
+  {
+    "title": "Rauno — Portfolio",
+    "description": "Wonderful portfolio built around the concept of an operating system.",
+    "tags": ["portfolio", "animation"],
+    "category": "Portfolio",
+    "link": "https://rauno.me/"
+  },
+  {
+    "title": "Ollivere — Portfolio",
+    "description": "No nonsense portfolio.",
+    "tags": ["portfolio", "animation", "illustration"],
+    "category": "Portfolio",
+    "link": "https://ollivere.co/"
+  },
+  {
+    "title": "Bruno Simon — Portfolio",
+    "description": "Portfolio of Bruno Simon, creative developer living in Paris.",
+    "tags": ["portfolio", "animation", "3d", "game"],
+    "category": "Portfolio",
+    "link": "https://bruno-simon.com/"
+  },
+  {
+    "title": "Cuberto",
+    "description": "Digital agency with a focus on UI/UX design and development.",
+    "tags": ["agency", "animation", "3d"],
+    "category": "Agency",
+    "link": "https://cuberto.com/"
+  },
+  {
+    "title": "Bending Spoons",
+    "description": "Digital product company that creates and markets mobile apps.",
+    "tags": ["agency", "animation", "3d"],
+    "category": "Agency",
+    "link": "https://bendingspoons.com/"
+  },
+  {
+    "title": "AuthKit by WorkOS",
+    "description": "Authentication and user management for developers.",
+    "tags": ["saas", "illustration", "hero section"],
+    "category": "SaaS",
+    "link": "https://authkit.com/"
+  },
+  {
+    "title": "Daylight | A More Caring Computer",
+    "description": "The world's first full-speed paper-like display.",
+    "tags": ["product", "animation"],
+    "category": "Product",
+    "link": "https://daylightcomputer.com/"
+  },
+  {
+    "title": "Wope",
+    "description": "Modern SEO platform that provides businesses with data and search traffic insights.",
+    "tags": [
+      "saas",
+      "bento grid",
+      "hero section",
+      "testimonial",
+      "pricing",
+      "contact form",
+      "footer",
+      "animation"
+    ],
+    "category": "SaaS",
+    "link": "https://wope.com/"
+  },
+  {
+    "title": "Clerk",
+    "description": "Suite of embeddable UIs, flexible APIs, and admin dashboards to authenticate and manage your users.",
+    "tags": ["saas", "bento grid"],
+    "category": "SaaS",
+    "link": "https://clerk.com/"
+  },
+  {
+    "title": "Resend",
+    "description": "Email marketing platform that helps you send better emails.",
+    "tags": ["saas", "3d", "hero section", "contact", "blog"],
+    "category": "SaaS",
+    "link": "https://resend.com/"
+  },
+  {
+    "title": "Superpower",
+    "description": "The world's most advanced digital clinic to help you live longer, prevent disease, and feel your best. ",
+    "tags": ["healthcare", "animation"],
+    "category": "Healthcare",
+    "link": "https://superpower.com/"
+  },
+  {
+    "title": "Build in Amsterdam",
+    "description": "Digital product studio that helps startups and enterprises build the right thing.",
+    "tags": ["agency", "animation", "navigation menu"],
+    "category": "Agency",
+    "link": "https://www.buildinamsterdam.com/"
+  }
+]

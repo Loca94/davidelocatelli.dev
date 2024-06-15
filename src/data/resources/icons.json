@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Feather Icons",
+    "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+    "link": "https://heroicons.com/"
+  },
+  {
+    "title": "PhosphorIcons",
+    "description": "A set of free MIT-licensed high-quality SVG icons for you to use in your web projects.",
+    "link": "https://phosphoricons.com/"
+  },
+  {
+    "title": "Health Icons",
+    "description": "Free, open source health icons.",
+    "link": "https://healthicons.org/"
+  },
+  {
+    "title": "Boxicons",
+    "description": "Free collection of carefully crafted open source icons.",
+    "link": "https://boxicons.com/"
+  },
+  {
+    "title": "Boostrap Icons",
+    "description": "Official open source SVG icon library for Bootstrap.",
+    "link": "https://icons.getbootstrap.com/"
+  },
+  {
+    "title": "Tabler Icons",
+    "description": "5000+ Open source free SVG icons, highly customizable.",
+    "link": "https://tabler.io/icons/"
+  }
+]
