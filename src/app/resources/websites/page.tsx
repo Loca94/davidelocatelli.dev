@@ -1,6 +1,7 @@
 import Container from '@/components/Container';
 import ResourceLink from '@/components/ResourceLink';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
+import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import websites from '@/data/resources/websites.json';
 
 export default function IconsPage() {
@@ -10,13 +11,13 @@ export default function IconsPage() {
         <div className="flex flex-col space-y-8">
           <div>
             <FadeIn>
-              <h1 className="text-lg font-medium text-neutral-950">Websites</h1>
+              <PageTitle>Websites</PageTitle>
             </FadeIn>
             <FadeIn>
-              <p className="font-medium text-neutral-400">
+              <PageDescription>
                 Remarkable websites and portfolios I came across surfing the
                 web.
-              </p>
+              </PageDescription>
             </FadeIn>
           </div>
 

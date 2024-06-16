@@ -1,6 +1,7 @@
 import Container from '@/components/Container';
 import ResourceLink from '@/components/ResourceLink';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
+import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import icons from '@/data/resources/icons.json';
 
 export default function IconsPage() {
@@ -10,19 +11,19 @@ export default function IconsPage() {
         <div className="flex flex-col space-y-8">
           <div>
             <FadeIn>
-              <h1 className="text-lg font-medium text-neutral-950">Icons</h1>
+              <PageTitle>Icons</PageTitle>
             </FadeIn>
             <FadeIn>
-              <p className="font-medium text-neutral-400">
+              <PageDescription>
                 Below a list of icon sets I enjoy using.
-              </p>
+              </PageDescription>
             </FadeIn>
           </div>
 
           <div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col divide-y divide-neutral-800">
               {icons.map((icon) => (
-                <FadeIn key={icon.title}>
+                <FadeIn key={icon.title} className="py-6">
                   <ResourceLink
                     title={icon.title}
                     description={icon.description}
@@ -30,7 +31,7 @@ export default function IconsPage() {
                   />
                 </FadeIn>
               ))}
-              <FadeIn>
+              {/* <FadeIn>
                 <a
                   href="https://icon-sets.iconify.design/skill-icons/"
                   target="_blank"
@@ -42,7 +43,7 @@ export default function IconsPage() {
                 <p className="text-neutral-400">
                   I primarily use this set for the Skill Icons.
                 </p>
-              </FadeIn>
+              </FadeIn> */}
             </div>
           </div>
         </div>

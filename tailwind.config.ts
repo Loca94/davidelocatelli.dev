@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config = {
-  darkMode: ['class'],
+  darkMode: ['selector'],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -41,7 +41,22 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities }: { addUtilities: Function }) {
+      addUtilities(
+        {
+          '.stop-color-gray': {
+            'stop-color': '#525252',
+          },
+          '.stop-color-emerald': {
+            'stop-color': '#10B981',
+          },
+        },
+        ['responsive', 'hover'],
+      );
+    },
+  ],
 } satisfies Config;
 
 export default config;

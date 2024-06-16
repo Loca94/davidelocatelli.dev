@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${GeistSans.className} h-full bg-white pb-24 antialiased selection:bg-emerald-300 selection:text-emerald-900`}
+        className={`${GeistSans.className} h-full bg-white pb-24 antialiased selection:bg-emerald-300 selection:text-emerald-900 dark:bg-neutral-950 dark:selection:bg-emerald-800 dark:selection:text-emerald-50`}
       >
         <Header />
         <main>{children}</main>

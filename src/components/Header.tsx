@@ -31,7 +31,7 @@ export default function Header() {
         <FadeIn>
           <Link href="/" className="block">
             <div className="sr-only">Go to homepage</div>
-            <Logo className="h-12 w-12 opacity-80 transition duration-300 ease-in-out hover:opacity-100" />
+            <Logo className="group h-12 w-12 transition-all duration-300 ease-in-out" />
 
             {/* TODO: Qui voglio inserire dei breadcrumbs, vorrei capire quanto è facile/difficile.
              Come animazione di apparizione sarebbe figo poter mettere l'effetto di apparizione lettera per lettera con il blur */}

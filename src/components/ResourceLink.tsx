@@ -8,15 +8,18 @@ export default function ResourceLink({
   href: string;
 }) {
   return (
-    <div className="flex flex-col">
-      <a
-        href={href}
-        target="_blank"
-        className="relative inline-flex items-center text-neutral-700 transition-colors duration-300 hover:text-neutral-900"
-      >
+    <a
+      href={href}
+      target="_blank"
+      className="group flex flex-col transition-colors duration-300"
+    >
+      <div className="font-medium text-neutral-700 group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-emerald-400">
         {title}
-      </a>
-      <p className="text-neutral-400">{description}</p>
-    </div>
+      </div>
+
+      <p className="text-neutral-400 dark:text-neutral-400 dark:group-hover:text-[#678E82]">
+        {description}
+      </p>
+    </a>
   );
 }

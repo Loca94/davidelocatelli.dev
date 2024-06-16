@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { TriangleIcon } from '../Icons';
 
 const navLinks = [
   { id: 1, label: 'Home', href: '#home' },
@@ -15,7 +14,7 @@ const AnimatedLinks = () => {
   const [hovered, setHovered] = React.useState<boolean>(false);
   const [coords, setCoords] = React.useState({ top: 0, height: 0, elWidth: 0 });
 
-  const handleMouseEnter = (event, id) => {
+  const handleMouseEnter = (event: any, id: any) => {
     const rect = event.target.getBoundingClientRect();
     const startingPoint = document
       .getElementById('navigation')
@@ -47,38 +46,36 @@ const AnimatedLinks = () => {
         ))}
       </ul>
       {hovered !== null && (
+        // <motion.span
+        //   className="absolute -left-3 z-0 rounded-full border-2 border-emerald-200 bg-emerald-200/20"
+        //   initial={{
+        //     opacity: 0,
+        //     filter: 'blur(8px)',
+        //   }}
+        //   animate={{
+        //     opacity: 1,
+        //     top: coords.top - 3,
+        //     height: coords.height + 6,
+        //     width: coords.elWidth + 24,
+        //     filter: 'blur(0px)',
+        //   }}
+        //   exit={{
+        //     opacity: 0,
+        //     filter: 'blur(8px)',
+        //   }}
+        //   transition={{ duration: 0.3 }}
+        // />
+
         <motion.span
-          className="absolute -left-3 z-0 rounded-full border-2 border-emerald-200 bg-emerald-200/20"
-          initial={{
-            opacity: 0,
-            filter: 'blur(8px)',
-          }}
+          className="absolute -left-4 z-0 h-4 w-0.5 bg-emerald-400"
+          initial={false}
           animate={{
-            opacity: 1,
-            top: coords.top - 3,
-            height: coords.height + 6,
-            width: coords.elWidth + 24,
-            filter: 'blur(0px)',
-          }}
-          exit={{
-            opacity: 0,
-            filter: 'blur(8px)',
+            top: coords.top + 5,
+            height: coords.height,
+            width: coords.elWidth,
           }}
           transition={{ duration: 0.3 }}
         />
-
-        // <motion.div
-        //   className="absolute -left-4 z-0"
-        //   initial={false}
-        //   animate={{
-        //     top: coords.top + 5,
-        //     height: coords.height,
-        //     width: coords.elWidth,
-        //   }}
-        //   transition={{ duration: 0.3 }}
-        // >
-        //   <TriangleIcon className="h-3 w-3 rotate-90 text-emerald-400" />
-        // </motion.div>
       )}
     </nav>
   );

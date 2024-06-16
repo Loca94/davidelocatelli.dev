@@ -1,6 +1,7 @@
 import ResourceLink from '@/components/ResourceLink';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import Container from '@/components/Container';
+import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 
 export default function LearningPage() {
   return (
@@ -9,10 +10,10 @@ export default function LearningPage() {
         <div className="flex flex-col space-y-8">
           <div>
             <FadeIn>
-              <h1 className="text-lg font-medium text-neutral-950">Learning</h1>
+              <PageTitle>Learning</PageTitle>
             </FadeIn>
             <FadeIn>
-              <p className="font-medium text-neutral-400">bla bla bla...</p>
+              <PageDescription>bla bla bla...</PageDescription>
             </FadeIn>
           </div>
 
