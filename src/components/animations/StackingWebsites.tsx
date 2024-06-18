@@ -31,8 +31,8 @@ const websites: WebsiteCard[] = [
 
 function WebsiteHeader({ url }: { url: string }) {
   return (
-    <div className="flex items-center justify-between border-b border-neutral-100 px-2 pb-1 pt-2 transition-colors duration-300 dark:border-neutral-700 dark:group-hover:border-emerald-700">
-      <div className="flex items-center space-x-1 grayscale transition-all duration-300 group-hover:grayscale-0">
+    <div className="flex items-center justify-between border-b border-neutral-100 px-2 pb-1 pt-2 transition-colors duration-300 dark:border-neutral-700">
+      <div className="flex items-center space-x-1 transition-all duration-300 sm:grayscale sm:group-hover:grayscale-0">
         <div className="h-2 w-2 rounded-full bg-emerald-700"></div>
         <div className="h-2 w-2 rounded-full bg-emerald-200"></div>
         <div className="h-2 w-2 rounded-full bg-emerald-400"></div>
@@ -79,7 +79,7 @@ export const StackingWebsites = ({
         return (
           <motion.div
             key={card.id}
-            className="absolute flex h-40 w-full max-w-80 flex-col justify-between rounded border border-neutral-200 bg-white transition-colors duration-300 sm:max-w-lg dark:border-neutral-700 dark:bg-neutral-900 dark:group-hover:border-emerald-700"
+            className="absolute flex h-40 w-full max-w-80 flex-col justify-between rounded border border-neutral-200 bg-white transition-colors duration-300 sm:max-w-lg dark:border-neutral-700 dark:bg-neutral-900"
             style={{
               transformOrigin: 'top center',
             }}

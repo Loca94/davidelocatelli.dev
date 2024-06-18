@@ -36,8 +36,8 @@ export default function About() {
                 with more than{' '}
                 <span className="font-medium text-neutral-200">
                   5 years of experience
-                </span>{' '}
-                int the field.
+                </span>
+                .
               </p>
             </FadeIn>
             <FadeIn>

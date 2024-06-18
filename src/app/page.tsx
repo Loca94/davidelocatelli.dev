@@ -32,7 +32,7 @@ export default function Home() {
               <li>
                 <Link
                   href="about"
-                  className="block w-fit py-2 font-medium text-neutral-800 dark:text-neutral-200 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-600"
                 >
                   About
                 </Link>
@@ -42,7 +42,7 @@ export default function Home() {
               <li>
                 <Link
                   href="projects"
-                  className="block w-fit py-2 font-medium text-neutral-800 dark:text-neutral-200 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-600"
                 >
                   Projects
                 </Link>
@@ -52,7 +52,7 @@ export default function Home() {
               <li>
                 <Link
                   href="resources"
-                  className="block w-fit py-2 font-medium text-neutral-800 dark:text-neutral-200 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-600"
                 >
                   Resources
                 </Link>
@@ -109,8 +109,6 @@ export default function Home() {
             </FadeIn>
           </ul>
         </div>
-
-        {/* <AnimatedLinks /> */}
       </Container>
     </FadeInStagger>
   );

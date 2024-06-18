@@ -22,9 +22,9 @@ export default function IconsPage() {
           </div>
 
           <div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col divide-y divide-neutral-800">
               {websites.map((website) => (
-                <FadeIn key={website.title}>
+                <FadeIn key={website.title} className="py-6">
                   <ResourceLink
                     title={website.title}
                     description={website.description}
