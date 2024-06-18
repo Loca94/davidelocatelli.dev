@@ -1,6 +1,9 @@
 import type { Config } from 'tailwindcss';
 
 const config = {
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   darkMode: ['selector'],
   content: [
     './pages/**/*.{ts,tsx}',
