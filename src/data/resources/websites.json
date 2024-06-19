@@ -91,5 +91,12 @@
     "tags": ["agency", "animation", "navigation menu"],
     "category": "Agency",
     "link": "https://www.buildinamsterdam.com/"
+  },
+  {
+    "title": "Stripe",
+    "description": "Stripe powers online and in-person payment processing and financial solutions for businesses of all sizes.",
+    "tags": ["saas", "animation", "hero section", "design system"],
+    "category": "SaaS",
+    "link": "https://stripe.com/"
   }
 ]
