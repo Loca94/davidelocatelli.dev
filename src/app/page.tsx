@@ -1,5 +1,4 @@
 import Container from '@/components/Container';
-import AnimatedLinks from '@/components/animations/AnimatedLinks';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageTitle } from '@/components/ui/PageLayout';
 import Link from 'next/link';
@@ -19,7 +18,7 @@ export default function Home() {
               target="_blank"
             >
               Software Engineer at{' '}
-              <span className="hover:underline hover:decoration-neutral-200 hover:underline-offset-2 dark:hover:decoration-emerald-900">
+              <span className="transition duration-300 hover:underline hover:decoration-neutral-200 hover:underline-offset-2 dark:hover:text-neutral-300 dark:hover:decoration-emerald-500">
                 Accenture
               </span>
             </a>

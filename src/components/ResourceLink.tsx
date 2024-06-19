@@ -17,7 +17,7 @@ export default function ResourceLink({
     >
       <div className="flex items-center font-medium text-neutral-700 transition duration-300 group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100">
         {title}
-        <ArrowUpRightMiniIcon className="ml-1.5 inline-block h-4 w-4 text-neutral-500 transition-all duration-300 dark:group-hover:ml-2.5 dark:group-hover:text-neutral-100" />
+        <ArrowUpRightMiniIcon className="ml-1 inline-block h-4 w-4 text-neutral-500 transition-all duration-300 dark:group-hover:ml-2 dark:group-hover:text-emerald-500" />
       </div>
 
       <p className="text-neutral-400 transition duration-300 dark:text-neutral-400 dark:group-hover:text-neutral-300">
