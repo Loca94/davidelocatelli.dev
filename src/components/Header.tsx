@@ -2,10 +2,14 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 import { Logo } from '@/components/Icons';
 import { SlashIcon } from '@radix-ui/react-icons';
 import Container from '@/components/Container';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
+import AboutPhoto from '@/images/about-photo.webp';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,8 +17,55 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/Breadcrumb';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
+
+function FlipLogo({ pathname }: { pathname: string }) {
+  const isAboutPage = pathname === '/about';
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={isAboutPage ? 'photo-container' : 'svg-container'}
+        initial={{
+          opacity: 0,
+          y: 10,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.3,
+          ease: 'easeInOut',
+        }}
+        exit={{
+          opacity: 0,
+          y: -30,
+          x: 20,
+          filter: 'blur(8px)',
+          scale: 1.5,
+          position: 'absolute',
+          transition: {
+            duration: 0.225,
+            ease: 'easeInOut',
+          },
+        }}
+      >
+        {isAboutPage ? (
+          <Image
+            className="rounded-full transition-opacity duration-300 hover:opacity-80"
+            src={AboutPhoto}
+            alt="My profile picture"
+            width={48}
+            height={40}
+          />
+        ) : (
+          <Logo className="group h-12 w-12 transition-all duration-300 ease-in-out" />
+        )}
+      </motion.div>
+    </AnimatePresence>
+  );
+}
 
 export default function Header() {
   const paths = usePathname();
@@ -29,12 +80,17 @@ export default function Header() {
         )}
       >
         <FadeIn>
-          <Link href="/" className="block">
+          <Link href="/" className="block h-12 w-12">
             <div className="sr-only">Go to homepage</div>
-            <Logo className="group h-12 w-12 transition-all duration-300 ease-in-out" />
-
-            {/* TODO: Qui voglio inserire dei breadcrumbs, vorrei capire quanto è facile/difficile.
-             Come animazione di apparizione sarebbe figo poter mettere l'effetto di apparizione lettera per lettera con il blur */}
+            <FlipLogo pathname={paths} />
+            {/* <Logo className="group h-12 w-12 transition-all duration-300 ease-in-out" /> */}
+            {/* <Image
+              className="rounded-full transition-opacity duration-300 hover:opacity-80"
+              src={AboutPhoto}
+              alt="My profile picture"
+              width={48}
+              height={40}
+            /> */}
           </Link>
         </FadeIn>
 
