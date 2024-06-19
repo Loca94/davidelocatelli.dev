@@ -17,10 +17,11 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/Breadcrumb';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 function FlipLogo({ pathname }: { pathname: string }) {
   const isAboutPage = pathname === '/about';
+  let shouldReduceMotion = useReducedMotion();
 
   return (
     <AnimatePresence mode="wait">
@@ -28,7 +29,7 @@ function FlipLogo({ pathname }: { pathname: string }) {
         key={isAboutPage ? 'photo-container' : 'svg-container'}
         initial={{
           opacity: 0,
-          y: 10,
+          y: shouldReduceMotion ? 0 : 10,
         }}
         animate={{
           opacity: 1,
@@ -40,10 +41,10 @@ function FlipLogo({ pathname }: { pathname: string }) {
         }}
         exit={{
           opacity: 0,
-          y: -30,
-          x: 20,
+          y: shouldReduceMotion ? 0 : -30,
+          x: shouldReduceMotion ? 0 : 20,
           filter: 'blur(8px)',
-          scale: 1.5,
+          scale: shouldReduceMotion ? 1 : 1.5,
           position: 'absolute',
           transition: {
             duration: 0.225,

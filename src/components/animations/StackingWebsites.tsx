@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type WebsiteCard = {
@@ -57,11 +57,14 @@ export const StackingWebsites = ({
   const CARD_OFFSET = offset || 18;
   const SCALE_FACTOR = scaleFactor || 0.15;
   const [cards, setCards] = useState<WebsiteCard[]>(websites);
+  let shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    startFlipping();
-    return () => clearInterval(interval);
-  }, []);
+    if (!shouldReduceMotion) {
+      startFlipping();
+      return () => clearInterval(interval);
+    }
+  }, [shouldReduceMotion]);
 
   const startFlipping = () => {
     interval = setInterval(() => {

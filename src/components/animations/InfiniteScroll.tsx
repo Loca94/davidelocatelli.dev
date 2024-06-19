@@ -3,6 +3,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useReducedMotion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
 function InfiniteScroll({
@@ -20,10 +21,11 @@ function InfiniteScroll({
 }) {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLDivElement>(null);
+  let shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     addAnimation();
-  }, []);
+  }, [shouldReduceMotion]);
 
   const [start, setStart] = useState(false);
   function addAnimation() {
@@ -39,7 +41,7 @@ function InfiniteScroll({
 
       getDirection();
       getSpeed();
-      setStart(true);
+      setStart(shouldReduceMotion ? false : true);
     }
   }
 
