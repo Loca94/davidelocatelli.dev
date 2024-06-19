@@ -8,7 +8,8 @@ export const metadata: Metadata = {
     template: '%s - Davide Locatelli',
     default: 'Davide Locatelli - Software Engineer',
   },
-  description: 'Full Stack Developer at Accenture',
+  description:
+    "I'm Davide, a software engineer based in Italy. Currently building accessible and inclusive products at Accenture.",
 };
 
 export default function RootLayout({

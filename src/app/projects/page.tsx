@@ -1,7 +1,13 @@
+import { Metadata } from 'next';
 import Container from '@/components/Container';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { SkullIcon } from '@/components/Icons';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: 'Things I’ve made in my free time.',
+};
 
 export default function ProjectsPage() {
   return (

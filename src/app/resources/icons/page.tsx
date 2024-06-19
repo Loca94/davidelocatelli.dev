@@ -1,8 +1,14 @@
+import { Metadata } from 'next';
 import Container from '@/components/Container';
 import ResourceLink from '@/components/ResourceLink';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import icons from '@/data/resources/icons.json';
+
+export const metadata: Metadata = {
+  title: 'Icons - Resources',
+  description: 'A curated list of icon sets I used in my previous projects.',
+};
 
 export default function IconsPage() {
   return (
@@ -15,7 +21,7 @@ export default function IconsPage() {
             </FadeIn>
             <FadeIn>
               <PageDescription>
-                Below a list of icon sets I enjoy using.
+                Below a list of my favorite icon sets.
               </PageDescription>
             </FadeIn>
           </div>

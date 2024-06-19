@@ -1,8 +1,14 @@
+import { Metadata } from 'next';
 import Container from '@/components/Container';
 import ResourceLink from '@/components/ResourceLink';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import websites from '@/data/resources/websites.json';
+
+export const metadata: Metadata = {
+  title: 'Icons - Resources',
+  description: 'A curated list of websites I use for inspiration.',
+};
 
 export default function IconsPage() {
   return (

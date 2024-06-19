@@ -1,9 +1,16 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/Container';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { StackingWebsites } from '@/components/animations/StackingWebsites';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import InfiniteScrollingIcons from '@/components/InfiniteScrollingIcons';
+
+export const metadata: Metadata = {
+  title: 'Resources',
+  description:
+    'A collection of useful resources on programming, product design and more.',
+};
 
 export default function ResourcesPage() {
   return (
@@ -16,7 +23,7 @@ export default function ResourcesPage() {
           <FadeIn>
             <PageDescription>
               Explore a curated selection of invaluable tools, references and
-              inspirations to elevate/power your next web project.
+              inspirations for your next web projects.
             </PageDescription>
           </FadeIn>
         </div>

@@ -1,7 +1,14 @@
+import { Metadata } from 'next';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import Container from '@/components/Container';
 import { TriangleIcon } from '@/components/Icons';
 import { Button } from '@/components/ui/Button';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'I’m Davide Locatelli, a Full-Stack Developer with more than 5 years of experience.',
+};
 
 export default function About() {
   const recentTechnologies = [
@@ -13,7 +20,7 @@ export default function About() {
     'Spring Boot',
     'TypeScript',
     'Docker',
-    'Vercel',
+    'Three.js',
   ];
 
   return (
