@@ -671,11 +671,3 @@ export {
   WindmillIcon,
   YarnIcon,
 };
-
-/*
-
-browsers
-cpu
-feather
-
-*/

@@ -25,7 +25,7 @@ function InfiniteScroll({
 
   useEffect(() => {
     addAnimation();
-  }, [shouldReduceMotion]);
+  }, []);
 
   const [start, setStart] = useState(false);
   function addAnimation() {
