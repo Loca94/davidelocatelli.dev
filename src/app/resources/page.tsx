@@ -4,7 +4,7 @@ import Container from '@/components/Container';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { StackingWebsites } from '@/components/animations/StackingWebsites';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
-import InfiniteScrollingIcons from '@/components/InfiniteScrollingIcons';
+import InfiniteScrollingIcons from '@/components/animations/InfiniteScrollingIcons';
 
 export const metadata: Metadata = {
   title: 'Resources',
