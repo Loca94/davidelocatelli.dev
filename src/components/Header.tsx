@@ -38,6 +38,9 @@ function FlipLogo({ pathname }: { pathname: string }) {
         transition={{
           duration: 0.3,
           ease: 'easeInOut',
+          type: 'spring',
+          stiffness: 100,
+          damping: 10,
         }}
         exit={{
           opacity: 0,
