@@ -1,5 +1,12 @@
 [
   {
+    "title": "Josh W Comeau — Portfolio",
+    "description": "Personal portfolio of Josh W Comeau, a front-end developer.",
+    "tags": ["portfolio", "animation", "blog"],
+    "category": "Portfolio",
+    "link": "https://joshwcomeau.com/"
+  },
+  {
     "title": "Rauno — Portfolio",
     "description": "Wonderful portfolio built around the concept of an operating system.",
     "tags": ["portfolio", "animation"],
@@ -98,5 +105,89 @@
     "tags": ["saas", "animation", "hero section", "design system"],
     "category": "SaaS",
     "link": "https://stripe.com/"
+  },
+  {
+    "title": "Neon Serverless Postgres",
+    "description": "The database you love, on a serverless platform designed to help you build reliable and scalable applications faster.",
+    "tags": ["serverless", "database provider"],
+    "category": "SaaS",
+    "link": "https://neon.tech/"
+  },
+  {
+    "title": "Vercel",
+    "description": "Develop. Preview. Ship. For the best frontend teams — Vercel.",
+    "tags": ["saas", "animation"],
+    "category": "SaaS",
+    "link": "https://vercel.com/"
+  },
+  {
+    "title": "Framer",
+    "description": "Design, prototype, and animate — all in one place.",
+    "tags": ["saas", "animation"],
+    "category": "SaaS",
+    "link": "https://framer.com/"
+  },
+  {
+    "title": "Figma",
+    "description": "The collaborative interface design tool.",
+    "tags": ["saas", "animation", "design system", "illustration"],
+    "category": "SaaS",
+    "link": "https://figma.com/"
+  },
+  {
+    "title": "Webflow",
+    "description": "Build responsive websites visually.",
+    "tags": ["saas", "animation", "design system"],
+    "category": "SaaS",
+    "link": "https://webflow.com/"
+  },
+  {
+    "title": "Blob Opera - Google Arts & Culture",
+    "description": "Create your own opera inspired song with Blob Opera.",
+    "tags": ["music", "animation", "3d"],
+    "category": "Music",
+    "link": "https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw?hl=en"
+  },
+  {
+    "title": "Zoox",
+    "description": "Zoox isn't an updated car–it's a whole new form of transportation.",
+    "tags": ["automotive", "animation"],
+    "category": "Automotive",
+    "link": "https://zoox.com/"
+  },
+  {
+    "title": "Raycast",
+    "description": "The command center for your Mac.",
+    "tags": ["saas", "animation", "utility"],
+    "category": "SaaS",
+    "link": "https://raycast.com/"
+  },
+  {
+    "title": "Linear",
+    "description": "Issue tracking and project management for engineering teams.",
+    "tags": ["saas", "animation"],
+    "category": "SaaS",
+    "link": "https://linear.app/"
+  },
+  {
+    "title": "Deveb",
+    "description": "A creative agency with solid design and development expertise.",
+    "tags": ["agency", "animation"],
+    "category": "Agency",
+    "link": "https://deveb.co/"
+  },
+  {
+    "title": "Diagram",
+    "description": "A design and development agency that helps startups and enterprises build the right thing.",
+    "tags": ["agency", "animation", "bento grid"],
+    "category": "Product",
+    "link": "https://diagram.com/"
+  },
+  {
+    "title": "Significa",
+    "description": "Think. Design. Develop. Launch. Repeat. mishmash.",
+    "tags": ["agency", "animation"],
+    "category": "Agency",
+    "link": "https://significa.co/"
   }
 ]

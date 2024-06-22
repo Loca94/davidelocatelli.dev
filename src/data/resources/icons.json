@@ -1,7 +1,7 @@
 [
   {
-    "title": "Feather Icons",
-    "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+    "title": "Heroicons",
+    "description": "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.",
     "link": "https://heroicons.com/"
   },
   {
@@ -23,6 +23,11 @@
     "title": "Boostrap Icons",
     "description": "Official open source SVG icon library for Bootstrap.",
     "link": "https://icons.getbootstrap.com/"
+  },
+  {
+    "title": "Feather Icons",
+    "description": "A flexible icon family for interfaces, diagrams, presentations — whatever, really.",
+    "link": "https://feathericons.com/"
   },
   {
     "title": "Tabler Icons",
