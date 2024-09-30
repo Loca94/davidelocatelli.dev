@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Container from '@/components/Container';
-import ResourceLink from '@/components/ResourceLink';
+import { ResourceLink } from '@/components/Resource';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import websites from '@/data/resources/websites.json';

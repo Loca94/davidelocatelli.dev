@@ -189,5 +189,19 @@
     "tags": ["agency", "animation"],
     "category": "Agency",
     "link": "https://significa.co/"
+  },
+  {
+    "title": "Lusion",
+    "description": "Digital agency that helps brands and startups create a strong online presence.",
+    "tags": ["agency", "animation", "3d"],
+    "category": "Agency",
+    "link": "https://lusion.co/"
+  },
+  {
+    "title": "Pioneer — Corn. Revolutionized.",
+    "description": "Pioneer is a new type of corn company.",
+    "tags": ["agriculture", "animation", "3d"],
+    "category": "Agriculture",
+    "link": "https://cornrevolution.resn.global/#"
   }
 ]

@@ -1,6 +1,7 @@
 import { ArrowUpRightMiniIcon } from '@/components/Icons';
+import { Card, CardHeader } from './ui/Card';
 
-export default function ResourceLink({
+function ResourceLink({
   title,
   description,
   href,
@@ -26,3 +27,25 @@ export default function ResourceLink({
     </a>
   );
 }
+
+function ResourceIconCard({
+  icon,
+  title,
+}: {
+  icon: JSX.Element;
+  title: string;
+}) {
+  return (
+    <Card
+      topGradient
+      className="text-neutral-700 transition-colors duration-300 dark:text-neutral-300 dark:group-hover:border-neutral-500 dark:group-hover:text-neutral-100"
+    >
+      <CardHeader className="space-y-4 rounded-lg transition-colors duration-300 dark:bg-neutral-800/10 dark:group-hover:bg-neutral-700/20">
+        {icon}
+        <span className="text-center font-medium">{title}</span>
+      </CardHeader>
+    </Card>
+  );
+}
+
+export { ResourceLink, ResourceIconCard };

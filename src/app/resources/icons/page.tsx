@@ -1,9 +1,21 @@
 import { Metadata } from 'next';
 import Container from '@/components/Container';
-import ResourceLink from '@/components/ResourceLink';
+import icons from '@/data/resources/icons.json';
+import { Card, CardHeader } from '@/components/ui/Card';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
-import icons from '@/data/resources/icons.json';
+import {
+  BootstrapIconsLogo,
+  BoxiconsLogo,
+  CSSggIcon,
+  FeatherIconsLogo,
+  GithubLogo,
+  HealthIconsLogo,
+  HeroiconsLogo,
+  PhosphorIconsLogo,
+  TablersIconsLogo,
+} from '@/components/Icons';
+import { ResourceIconCard } from '@/components/Resource';
 
 export const metadata: Metadata = {
   title: 'Icons - Resources',
@@ -11,6 +23,19 @@ export const metadata: Metadata = {
 };
 
 export default function IconsPage() {
+  const iconsClasses = 'w-8 h-8 self-center';
+  const iconsMap = {
+    Heroicons: <HeroiconsLogo className={iconsClasses} />,
+    PhosphorIcons: <PhosphorIconsLogo className={iconsClasses} />,
+    'Health Icons': <HealthIconsLogo className={iconsClasses} />,
+    Boxicons: <BoxiconsLogo className={iconsClasses} />,
+    'Bootstrap Icons': <BootstrapIconsLogo className={iconsClasses} />,
+    'Feather Icons': <FeatherIconsLogo className={iconsClasses} />,
+    'Tabler Icons': <TablersIconsLogo className={iconsClasses} />,
+    Octicons: <GithubLogo className={iconsClasses} />,
+    'CSS.gg': <CSSggIcon className={iconsClasses} />,
+  };
+
   return (
     <FadeInStagger>
       <Container>
@@ -27,29 +52,18 @@ export default function IconsPage() {
           </div>
 
           <div>
-            <div className="flex flex-col divide-y divide-neutral-800">
+            <div className="grid grid-cols-2 gap-6">
               {icons.map((icon) => (
-                <FadeIn key={icon.title} className="py-6">
-                  <ResourceLink
-                    title={icon.title}
-                    description={icon.description}
-                    href={icon.link}
-                  />
+                <FadeIn key={icon.title} className="group">
+                  <a href={icon.link} target="_blank">
+                    <span className="sr-only">{icon.description}</span>
+                    <ResourceIconCard
+                      title={icon.title}
+                      icon={iconsMap[icon.title]}
+                    />
+                  </a>
                 </FadeIn>
               ))}
-              {/* <FadeIn>
-                <a
-                  href="https://icon-sets.iconify.design/skill-icons/"
-                  target="_blank"
-                  className="relative inline-flex items-center text-neutral-500 transition-colors duration-300 hover:text-neutral-900"
-                >
-                  Iconify - Skill Icons - Da rimuovere perche il sito fa pena..
-                  TODO: da rimuovere
-                </a>
-                <p className="text-neutral-400">
-                  I primarily use this set for the Skill Icons.
-                </p>
-              </FadeIn> */}
             </div>
           </div>
         </div>

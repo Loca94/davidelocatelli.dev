@@ -20,7 +20,7 @@
     "link": "https://boxicons.com/"
   },
   {
-    "title": "Boostrap Icons",
+    "title": "Bootstrap Icons",
     "description": "Official open source SVG icon library for Bootstrap.",
     "link": "https://icons.getbootstrap.com/"
   },
@@ -33,5 +33,15 @@
     "title": "Tabler Icons",
     "description": "5000+ Open source free SVG icons, highly customizable.",
     "link": "https://tabler.io/icons/"
+  },
+  {
+    "title": "Octicons",
+    "description": "GitHub's icons.",
+    "link": "https://primer.style/foundations/icons"
+  },
+  {
+    "title": "CSS.gg",
+    "description": "A comprehensive, open-source CSS icons library. Featuring Vanilla CSS, SVG and Figma UI icons.",
+    "link": "https://css.gg/"
   }
 ]
