@@ -1,4 +1,4 @@
-import ResourceLink from '@/components/ResourceLink';
+import { ResourceLink } from '@/components/Resource';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import Container from '@/components/Container';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
@@ -13,7 +13,10 @@ export default function LearningPage() {
               <PageTitle>Learning</PageTitle>
             </FadeIn>
             <FadeIn>
-              <PageDescription>bla bla bla...</PageDescription>
+              <PageDescription>
+                bla bla bla... Sarebbe anche da mettere il link al libro
+                Refactoring UI.
+              </PageDescription>
             </FadeIn>
           </div>
 
