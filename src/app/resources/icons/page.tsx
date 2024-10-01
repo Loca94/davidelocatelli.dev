@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function IconsPage() {
   const iconsClasses = 'w-8 h-8 self-center';
-  const iconsMap = {
+  const iconsMap: { [key: string]: JSX.Element } = {
     Heroicons: <HeroiconsLogo className={iconsClasses} />,
     PhosphorIcons: <PhosphorIconsLogo className={iconsClasses} />,
     'Health Icons': <HealthIconsLogo className={iconsClasses} />,
@@ -52,10 +52,10 @@ export default function IconsPage() {
           </div>
 
           <div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
               {icons.map((icon) => (
                 <FadeIn key={icon.title} className="group">
-                  <a href={icon.link} target="_blank">
+                  <a href={icon.link} target="_blank" className="relative">
                     <span className="sr-only">{icon.description}</span>
                     <ResourceIconCard
                       title={icon.title}

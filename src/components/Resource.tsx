@@ -40,9 +40,9 @@ function ResourceIconCard({
       topGradient
       className="text-neutral-700 transition-colors duration-300 dark:text-neutral-300 dark:group-hover:border-neutral-500 dark:group-hover:text-neutral-100"
     >
-      <CardHeader className="space-y-4 rounded-lg transition-colors duration-300 dark:bg-neutral-800/10 dark:group-hover:bg-neutral-700/20">
+      <CardHeader className="select-none space-y-3 rounded-lg py-4 transition-colors duration-300 dark:bg-neutral-800/10 dark:group-hover:bg-neutral-700/20">
         {icon}
-        <span className="text-center font-medium">{title}</span>
+        <span className="text-center text-sm md:text-base">{title}</span>
       </CardHeader>
     </Card>
   );
