@@ -57,6 +57,16 @@ export default function Home() {
                 </Link>
               </li>
             </FadeIn>
+            <FadeIn>
+              <li>
+                <Link
+                  href="articles"
+                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-600"
+                >
+                  Articles
+                </Link>
+              </li>
+            </FadeIn>
           </ul>
         </div>
 

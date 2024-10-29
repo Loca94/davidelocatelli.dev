@@ -2,7 +2,7 @@
 
 'use client';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tw-utils';
 import { useReducedMotion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import {

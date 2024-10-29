@@ -1,0 +1,39 @@
+import { MdxLayout } from '@/components/Mdx';
+
+export const article = {
+  author: 'Davide Locatelli',
+  publishDate: '2024-10-06',
+  title: 'Change favicon on theme change - Next.js',
+  description:
+    'Write a description here.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <MdxLayout article={article} {...props} />
+
+# This is a test MDX page
+
+Here is a paragraph
+[Link Text](https://www.test-page.com)
+
+here is a list:
+
+- Item one
+- Item two
+- Item three
+
+## This is an h2 element
+
+Now I will add a code block
+
+```js {{ title: 'Example request with basic auth' }}
+import ApiClient from '@example/protocol-api'
+
+const client = new ApiClient(token)
+
+await client.contacts.list()
+```
