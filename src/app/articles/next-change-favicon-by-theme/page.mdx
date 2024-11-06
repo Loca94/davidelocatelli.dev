@@ -3,9 +3,9 @@ import { MdxLayout } from '@/components/Mdx';
 export const article = {
   author: 'Davide Locatelli',
   publishDate: '2024-10-06',
-  title: 'Change favicon on theme change - Next.js',
-  description:
-    'Write a description here.',
+  title: 'Mastering CSS Counters: A Beginner to Advanced Guide',
+  description: 'Learn how to use the CSS content: counter() property to create dynamic, numbered elements on web pages. This guide covers counter-reset, counter-increment, and practical applications for developers.',
+  keywords: ['CSS counters', 'counter-reset', 'counter-increment', 'content: counter()', 'CSS pseudo-elements', 'numbering elements in CSS', 'CSS tutorial']
 }
 
 export const metadata = {
@@ -15,25 +15,51 @@ export const metadata = {
 
 export default (props) => <MdxLayout article={article} {...props} />
 
-# This is a test MDX page
 
-Here is a paragraph
-[Link Text](https://www.test-page.com)
+CSS counters are a powerful feature for creating automatically incremented numbers on your webpage, making them great for things like numbering lists, sections, or custom elements without manually updating the HTML. They’re versatile, flexible, and can add both structure and style to your content. In this post, we’ll explore how CSS counters work, how to set them up, and several practical examples to make your projects more dynamic.
 
-here is a list:
+## What are CSS Counters?
 
-- Item one
-- Item two
-- Item three
+CSS counters allow you to keep track of the number of times an element is used in your code and display it visually. They’re perfect for numbering items automatically, especially when working with dynamic content. The main CSS properties we’ll use to work with counters are:
 
-## This is an h2 element
+- `counter-reset`: Initializes or resets a counter.
+- `counter-increment`: Increases the counter value by a set amount (typically by 1).
+- `content: counter()`: Displays the counter value, typically within `::before` or `::after` pseudo-elements.
 
-Now I will add a code block
+With these three properties, you can define and manage counters to keep track of items or sections without additional JavaScript or HTML adjustments.
 
-```js {{ title: 'Example request with basic auth' }}
-import ApiClient from '@example/protocol-api'
+## Setting Up a Basic Counter
 
-const client = new ApiClient(token)
+Let’s start with a basic example of creating numbered headings in a list. Here’s how you’d set up a CSS counter to display numbers beside each heading.
 
-await client.contacts.list()
+### Step 1: Initialize the Counter with `counter-reset`
+
+To begin, we need to initialize the counter on a parent element, setting it up with `counter-reset`.
+
+```css
+/* Initialize the counter on the parent element */
+.container {
+  counter-reset: section-counter;
+}
+```
+
+### Step 2: Increment the Counter with counter-increment
+
+Next, on each child heading, use counter-increment to increase the counter each time it’s displayed.
+
+```css
+h2 {
+  counter-increment: section-counter;
+}
+```
+
+### Step 3: Display the Counter with `content: counter()`
+
+Finally, use `content: counter()` within a `::before` pseudo-element to display the incremented counter for each heading.
+
+```css
+h2::before {
+  content: counter(section-counter) ". ";
+  font-weight: bold;
+}
 ```

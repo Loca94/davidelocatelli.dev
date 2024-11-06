@@ -259,9 +259,9 @@ function ArrowUpRightMiniIcon(props: ComponentPropsWithoutRef<'svg'>) {
       {...props}
     >
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );
@@ -449,6 +449,19 @@ function CarrotIcon(props: ComponentPropsWithoutRef<'svg'>) {
   );
 }
 
+function CopyIcon(props: ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path>
+    </svg>
+  );
+}
+
 function CpuIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
@@ -471,6 +484,19 @@ function DropIcon(props: ComponentPropsWithoutRef<'svg'>) {
       {...props}
     >
       <path d="M174,47.75a254.19,254.19,0,0,0-41.45-38.3,8,8,0,0,0-9.18,0A254.19,254.19,0,0,0,82,47.75C54.51,79.32,40,112.6,40,144a88,88,0,0,0,176,0C216,112.6,201.49,79.32,174,47.75ZM128,216a72.08,72.08,0,0,1-72-72c0-57.23,55.47-105,72-118,16.53,13,72,60.75,72,118A72.08,72.08,0,0,1,128,216Zm55.89-62.66a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68Z"></path>
+    </svg>
+  );
+}
+
+function CheckIcon(props: ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path>
     </svg>
   );
 }
@@ -808,7 +834,9 @@ export {
   CameraIcon,
   CarrotIcon,
   ChartBarIcon,
+  CheckIcon,
   ChefHatIcon,
+  CopyIcon,
   CpuIcon,
   CSSggIcon,
   DropIcon,
