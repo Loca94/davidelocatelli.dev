@@ -3,6 +3,7 @@ export interface Article {
   description: string;
   author: string;
   publishDate: string;
+  keywords: string[];
 }
 
 export interface ArticleWithSlug extends Article {
