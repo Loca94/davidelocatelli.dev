@@ -4,5 +4,17 @@
     "description": "The MDN Web Docs site provides information about Open Web technologies including HTML, CSS, and APIs for both Web sites and progressive web apps.",
     "tags": ["web", "docs"],
     "url": "https://developer.mozilla.org/"
+  },
+  {
+    "title": "Refactoring UI",
+    "description": "Learn how to design beautiful user interfaces by yourself using specific tactics explained from a developer's point-of-view.",
+    "tags": ["design", "ui"],
+    "url": "https://refactoringui.com/"
+  },
+  {
+    "title": "Zajno Digital Studio",
+    "description": "Motion is a website that showcases the power of UI/UX animation in conveying the mood and character of a brand.",
+    "tags": ["design", "ui", "ux", "animations"],
+    "url": "https://motion.zajno.com/"
   }
 ]
