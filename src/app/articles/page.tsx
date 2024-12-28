@@ -1,8 +1,8 @@
-import { ArticleWithSlug } from "@/lib/models/article";
-import { getAllArticles } from "@/lib/utils/article-utils";
-import Container from "@/components/Container";
-import { Metadata } from "next";
-import Link from "next/link";
+import { ArticleWithSlug } from '@/lib/models/article';
+import { getAllArticles } from '@/lib/utils/article-utils';
+import Container from '@/components/Container';
+import { Metadata } from 'next';
+import Link from 'next/link';
 
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
@@ -16,8 +16,11 @@ function Article({ article }: { article: ArticleWithSlug }) {
 }
 
 export const metadata: Metadata = {
-  title: "Articles",
-  description: "Add a meta-description fot the article page.",
+  title: 'Articles',
+  description: 'Add a meta-description fot the article page.',
+  alternates: {
+    canonical: '/articles',
+  },
 };
 
 export default async function ArticlesIndex() {

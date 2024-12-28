@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Resources',
   description:
     'A collection of useful resources on programming, product design and more.',
+  alternates: {
+    canonical: '/resources',
+  },
 };
 
 export default function ResourcesPage() {

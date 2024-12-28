@@ -7,6 +7,9 @@ import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'Things I’ve made in my free time.',
+  alternates: {
+    canonical: '/projects',
+  },
 };
 
 export default function ProjectsPage() {

@@ -64,10 +64,12 @@ function CodeWrapper({
   }
 
   return (
-    <div className="my-6 overflow-hidden rounded-xl bg-neutral-900 shadow-md dark:ring-1 dark:ring-white/10">
+    <div className="my-6 overflow-hidden rounded-xl bg-neutral-900 shadow-md">
       <CodeHeader title={title} />
       <div className="relative">
-        <pre className="overflow-x-auto p-4 text-white">{children}</pre>
+        <pre className="overflow-x-auto rounded-xl p-4 text-white">
+          {children}
+        </pre>
         <CopyButton code={code} />
       </div>
     </div>

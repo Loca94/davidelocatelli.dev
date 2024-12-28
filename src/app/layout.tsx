@@ -4,6 +4,10 @@ import { GeistSans } from 'geist/font/sans';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://davidelocatelli.dev'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     template: '%s - Davide Locatelli',
     default: 'Davide Locatelli - Software Engineer',

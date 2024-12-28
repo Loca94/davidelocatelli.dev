@@ -1,14 +1,14 @@
-import nextMDX from '@next/mdx';
+import createMDX from '@next/mdx';
 import { rehypePlugins } from './src/lib/mdx-plugins/rehype.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Configure `pageExtensions` to include markdown and MDX files
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['mdx', 'ts', 'tsx'],
   // Optionally, add any other Next.js config below
 };
 
-const withMDX = nextMDX({
+const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     rehypePlugins,

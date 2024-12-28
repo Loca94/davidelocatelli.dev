@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const navLinks = [
   { id: 1, label: 'Home', href: '#home' },

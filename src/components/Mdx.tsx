@@ -1,6 +1,5 @@
 import { ArticleWithSlug } from '@/lib/models/article';
 import Prose from '@/components/Prose';
-import { formatDate } from '@/lib/utils/date-utils';
 import Container from '@/components/Container';
 import Link from 'next/link';
 
@@ -22,12 +21,6 @@ export function MdxLayout({
           <h1 className="mt-6 font-mono text-4xl font-bold tracking-tight text-neutral-800 sm:text-3xl dark:text-neutral-100">
             {article.title}
           </h1>
-          <time
-            dateTime={article.publishDate}
-            className="order-first flex items-center text-base text-neutral-400 dark:text-neutral-500"
-          >
-            <span>| Last Updated {formatDate(article.publishDate)}</span>
-          </time>
         </header>
         <Prose className="mt-8" data-mdx-content>
           {children}

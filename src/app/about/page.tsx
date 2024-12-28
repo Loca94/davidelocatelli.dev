@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'I’m Davide Locatelli, a Full-Stack Developer with more than 5 years of experience.',
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function About() {

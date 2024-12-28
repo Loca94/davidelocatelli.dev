@@ -17,7 +17,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/Breadcrumb';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 
 function FlipLogo({ pathname }: { pathname: string }) {
   const isAboutPage = pathname === '/about';

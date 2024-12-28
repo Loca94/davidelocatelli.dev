@@ -8,6 +8,9 @@ import websites from '@/data/resources/websites.json';
 export const metadata: Metadata = {
   title: 'Icons - Resources',
   description: 'A curated list of websites I use for inspiration.',
+  alternates: {
+    canonical: '/resources/websites',
+  },
 };
 
 export default function IconsPage() {
