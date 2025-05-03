@@ -1,6 +1,8 @@
 import { ArrowUpRightMiniIcon } from '@/components/Icons';
 import { Card, CardHeader } from './ui/Card';
 
+import type { JSX } from "react";
+
 function ResourceLink({
   title,
   description,

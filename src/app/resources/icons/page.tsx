@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { JSX, Metadata } from 'react';
 import Container from '@/components/Container';
 import icons from '@/data/resources/icons.json';
 import { Card, CardHeader } from '@/components/ui/Card';

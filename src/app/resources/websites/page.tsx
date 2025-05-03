@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Container from '@/components/Container';
 import { ResourceLink } from '@/components/Resource';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
