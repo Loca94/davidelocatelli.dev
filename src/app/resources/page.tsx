@@ -5,6 +5,7 @@ import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { StackingWebsites } from '@/components/animations/StackingWebsites';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import InfiniteScrollingIcons from '@/components/animations/InfiniteScrollingIcons';
+import SlotMachineIcons from '@/components/animations/SlotMachineIcons';
 
 export const metadata: Metadata = {
   title: 'Resources',
@@ -35,7 +36,8 @@ export default function ResourcesPage() {
           <FadeIn>
             <Link href="/resources/icons" className="group">
               <div className="relative mb-3 flex h-40 w-full max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-lg border border-emerald-300/50 bg-emerald-100 transition duration-300 sm:h-48 sm:max-w-xl dark:border-neutral-700 dark:bg-neutral-900/30">
-                <InfiniteScrollingIcons />
+                {/* <InfiniteScrollingIcons /> */}
+                <SlotMachineIcons />
               </div>
               <div>
                 <h2 className="font-medium text-neutral-900 dark:text-neutral-200">
