@@ -11,9 +11,9 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      'rounded-xl border border-neutral-200 bg-white text-neutral-950 shadow dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50',
+      'rounded-xl border border-neutral-200 bg-white text-neutral-950 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50',
       topGradient &&
-        "before:absolute before:left-4 before:right-4 before:top-0 before:h-[1px] before:rounded-xl before:bg-gradient-to-r before:from-transparent before:via-neutral-500 before:to-transparent before:content-['']",
+        "before:absolute before:left-4 before:right-4 before:top-0 before:h-[1px] before:rounded-xl before:bg-linear-to-r before:from-transparent before:via-neutral-500 before:to-transparent before:content-['']",
       className,
     )}
     {...props}

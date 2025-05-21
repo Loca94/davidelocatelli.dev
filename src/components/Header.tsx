@@ -17,7 +17,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/Breadcrumb';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 
 function FlipLogo({ pathname }: { pathname: string }) {
   const isAboutPage = pathname === '/about';
@@ -87,14 +87,6 @@ export default function Header() {
           <Link href="/" className="block h-12 w-12">
             <div className="sr-only">Go to homepage</div>
             <FlipLogo pathname={paths} />
-            {/* <Logo className="group h-12 w-12 transition-all duration-300 ease-in-out" /> */}
-            {/* <Image
-              className="rounded-full transition-opacity duration-300 hover:opacity-80"
-              src={AboutPhoto}
-              alt="My profile picture"
-              width={48}
-              height={40}
-            /> */}
           </Link>
         </FadeIn>
 

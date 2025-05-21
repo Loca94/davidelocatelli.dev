@@ -25,9 +25,9 @@ function Logo(props: ComponentPropsWithoutRef<'svg'>) {
           y2="15"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="transition-all duration-300 stop-color-gray group-hover:stop-color-emerald" />
+          <stop className="stop-color-gray group-hover:stop-color-emerald transition-all duration-300" />
           <stop
-            className="transition-all duration-300 stop-color-gray group-hover:stop-color-emerald"
+            className="stop-color-gray group-hover:stop-color-emerald transition-all duration-300"
             offset="1"
             stopOpacity="0"
           />
@@ -259,9 +259,9 @@ function ArrowUpRightMiniIcon(props: ComponentPropsWithoutRef<'svg'>) {
       {...props}
     >
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

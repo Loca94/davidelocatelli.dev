@@ -3,7 +3,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'motion/react';
 import React, { useEffect, useState } from 'react';
 import {
   AddressBookTabsIcon,
