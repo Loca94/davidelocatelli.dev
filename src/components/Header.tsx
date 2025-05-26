@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/Icons';
-import { SlashIcon } from '@radix-ui/react-icons';
 import Container from '@/components/Container';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import AboutPhoto from '@/images/about-photo.webp';
@@ -107,19 +106,26 @@ export default function Header() {
                   const breadcrumbLabel =
                     pathSegment[0].toUpperCase() +
                     pathSegment.slice(1, pathSegment.length);
+                  const isLast = index === pathNames.length - 1;
 
                   return (
                     <React.Fragment key={index}>
                       <FadeIn>
                         <BreadcrumbSeparator>
-                          <SlashIcon />
+                          <span className="text-netural-950/25 dark:text-neutral-50/25">
+                            /
+                          </span>
                         </BreadcrumbSeparator>
                       </FadeIn>
 
                       <FadeIn>
                         <BreadcrumbItem>
-                          <BreadcrumbLink asChild>
-                            <Link href={href}>{breadcrumbLabel}</Link>
+                          <BreadcrumbLink asChild isLast={isLast}>
+                            {isLast ? (
+                              <span>{breadcrumbLabel}</span>
+                            ) : (
+                              <Link href={href}>{breadcrumbLabel}</Link>
+                            )}
                           </BreadcrumbLink>
                         </BreadcrumbItem>
                       </FadeIn>
