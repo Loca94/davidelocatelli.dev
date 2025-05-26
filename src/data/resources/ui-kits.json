@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Shadcn/ui",
+    "description": "Description of Shadcn/ui (React)",
+    "tags": ["design-system", "ui", "components", "react"],
+    "category": "Design System",
+    "link": "https://ui.shadcn.com/"
+  },
+  {
+    "title": "HeroUI",
+    "description": "Description of HeroUI (React)",
+    "tags": ["design-system", "ui", "components", "react"],
+    "category": "Design System",
+    "link": "https://www.heroui.com/"
+  },
+  {
+    "title": "Tailwind Plus",
+    "description": "Description of Tailwind Plus",
+    "tags": ["design-system", "ui", "components", "templates"],
+    "category": "Design System",
+    "link": "https://tailwindcss.com/plus"
+  },
+  {
+    "title": "DaisyUI",
+    "description": "Description of DaisyUI",
+    "tags": ["design-system", "ui", "components", "tailwind"],
+    "category": "Design System",
+    "link": "https://daisyui.com/"
+  },
+  {
+    "title": "Mantine",
+    "description": "Description of Mantine (React)",
+    "tags": ["design-system", "ui", "components"],
+    "category": "Design System",
+    "link": "https://ui.mantine.dev/"
+  },
+  {
+    "title": "Bits UI",
+    "description": "Headless components for Svelte",
+    "tags": ["design-system", "ui", "components"],
+    "category": "Design System",
+    "link": "https://ui.mantine.dev/"
+  }
+]

@@ -47,7 +47,7 @@ function WebsiteHeader({ url }: { url: string }) {
   );
 }
 
-export const StackingWebsites = ({
+const StackingWebsites = ({
   offset,
   scaleFactor,
 }: {
@@ -100,3 +100,5 @@ export const StackingWebsites = ({
     </div>
   );
 };
+
+export default StackingWebsites;

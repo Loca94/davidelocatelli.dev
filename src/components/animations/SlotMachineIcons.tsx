@@ -109,7 +109,7 @@ const Reel = ({
   }, []);
 
   return (
-    <div className="relative m-1.5 h-32 w-16 overflow-hidden rounded-lg border-2 border-neutral-600/50">
+    <div className="relative m-1.5 h-32 w-16 overflow-hidden rounded-lg border-2 border-neutral-600/50 md:m-3">
       <motion.div
         className="flex flex-col will-change-transform"
         initial={{ y: 0 }}
@@ -134,7 +134,7 @@ const Reel = ({
 };
 
 const SlotMachineIcons = () => {
-  const numReels = 5;
+  const numReels = 3;
   const spinDuration = 3500;
 
   return (
