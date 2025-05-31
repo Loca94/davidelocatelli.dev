@@ -103,7 +103,9 @@ export default function About() {
           </FadeIn>
 
           <FadeIn>
-            <LetsTalkButton />
+            <div className="py-2">
+              <LetsTalkButton />
+            </div>
           </FadeIn>
         </div>
       </Container>
