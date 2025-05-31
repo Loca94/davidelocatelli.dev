@@ -65,7 +65,7 @@ export default function Home() {
             <FadeIn>
               <li>
                 <a
-                  href="mailto:davide.loca94@gmail.com"
+                  href="mailto:davidelocatelli.dev@gmail.com"
                   className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-600"
                 >
                   Email

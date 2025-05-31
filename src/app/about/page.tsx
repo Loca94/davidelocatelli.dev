@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import Container from '@/components/Container';
 import { TriangleIcon } from '@/components/Icons';
-import { Button } from '@/components/ui/Button';
+import { LetsTalkButton } from '@/components/animations/AnimatedBtnBorder';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -103,7 +103,7 @@ export default function About() {
           </FadeIn>
 
           <FadeIn>
-            <Button>Connect</Button>
+            <LetsTalkButton />
           </FadeIn>
         </div>
       </Container>
