@@ -40,5 +40,12 @@
     "tags": ["design-system", "ui", "components"],
     "category": "Design System",
     "link": "https://ui.mantine.dev/"
+  },
+  {
+    "title": "Magic UI",
+    "description": "UI library for Design Engineers. 150+ free and open-source animated components and effects built with React, Typescript, Tailwind CSS, and Motion.",
+    "tags": ["ui", "components", "animation"],
+    "category": "Animated Components",
+    "link": "https://magicui.design/"
   }
 ]

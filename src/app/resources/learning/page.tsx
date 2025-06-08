@@ -1,4 +1,4 @@
-import { ResourceLink } from '@/components/Resource';
+import { ResourceLink } from '@/components/ResourceLink';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import Container from '@/components/Container';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
