@@ -3,6 +3,14 @@
     "title": "MDN Web Docs",
     "description": "The MDN Web Docs site provides information about Open Web technologies including HTML, CSS, and APIs for both Web sites and progressive web apps.",
     "tags": ["web", "docs"],
-    "url": "https://developer.mozilla.org/"
+    "category": "Web Development",
+    "link": "https://developer.mozilla.org/"
+  },
+  {
+    "title": "The Web Can Do That? — Google",
+    "description": "Discover how you can enhance your web app’s powers with the web of today.",
+    "tags": ["web", "docs"],
+    "category": "Web Development",
+    "link": "https://thewebshowcase.withgoogle.com/"
   }
 ]

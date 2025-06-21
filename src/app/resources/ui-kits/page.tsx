@@ -1,28 +1,30 @@
+import type { Metadata } from 'next';
 import Container from '@/components/Container';
-import { ResourceLinkList } from '@/components/ResourceLink';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
-import learning from '@/data/resources/learning.json';
+import { ResourceLinkList } from '@/components/ResourceLink';
+import uiKits from '@/data/resources/ui-kits.json';
 
-export default function LearningPage() {
+export const metadata: Metadata = {
+  title: 'UI Kits - Resources',
+  description: '', // TODO: Add description
+};
+
+export default function UIKitPage() {
   return (
     <FadeInStagger>
       <Container>
         <div className="flex flex-col space-y-8">
           <div>
             <FadeIn>
-              <PageTitle>Learning</PageTitle>
+              <PageTitle>UI KITS</PageTitle>
             </FadeIn>
             <FadeIn>
-              <PageDescription>
-                bla bla bla... Sarebbe anche da mettere il link al libro
-                Refactoring UI.
-              </PageDescription>
+              <PageDescription>TODO: Add description</PageDescription>
             </FadeIn>
           </div>
 
-          {/* Project Cards */}
-          <ResourceLinkList data={learning} />
+          <ResourceLinkList data={uiKits} />
         </div>
       </Container>
     </FadeInStagger>

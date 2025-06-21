@@ -16,12 +16,25 @@ import {
   PhosphorIconsLogo,
   TablersIconsLogo,
 } from '@/components/Icons';
-import { ResourceIconCard } from '@/components/Resource';
 
 export const metadata: Metadata = {
   title: 'Icons - Resources',
   description: 'A curated list of icon sets I used in my previous projects.',
 };
+
+function IconCard({ icon, title }: { icon: JSX.Element; title: string }) {
+  return (
+    <Card
+      topGradient
+      className="text-neutral-700 transition-colors duration-300 dark:text-neutral-300 dark:group-hover:border-neutral-500 dark:group-hover:text-neutral-100"
+    >
+      <CardHeader className="space-y-3 rounded-lg py-4 transition-colors duration-300 select-none dark:bg-neutral-800/10 dark:group-hover:bg-neutral-700/20">
+        {icon}
+        <span className="text-center text-sm md:text-base">{title}</span>
+      </CardHeader>
+    </Card>
+  );
+}
 
 export default function IconsPage() {
   const iconsClasses = 'w-8 h-8 self-center';
@@ -58,10 +71,7 @@ export default function IconsPage() {
                 <FadeIn key={icon.title} className="group">
                   <a href={icon.link} target="_blank" className="relative">
                     <span className="sr-only">{icon.description}</span>
-                    <ResourceIconCard
-                      title={icon.title}
-                      icon={iconsMap[icon.title]}
-                    />
+                    <IconCard title={icon.title} icon={iconsMap[icon.title]} />
                   </a>
                 </FadeIn>
               ))}
