@@ -75,7 +75,7 @@ export default function ResourcesPage() {
             </Link>
           </FadeIn>
 
-          <FadeIn>
+          {/* <FadeIn>
             <Link href="/resources/ui-kits">
               <div className="relative mb-3 flex h-40 w-full max-w-[calc(100vw-3rem)] justify-center overflow-hidden rounded-lg border border-emerald-300/50 bg-emerald-100 px-4 py-8 sm:h-48 sm:max-w-xl dark:border-neutral-700 dark:bg-neutral-900/30">
                 <DotPattern className="[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] opacity-70" />
@@ -90,7 +90,7 @@ export default function ResourcesPage() {
                 </p>
               </div>
             </Link>
-          </FadeIn>
+          </FadeIn> */}
 
           {/* <FadeIn>
             <div className="relative mb-2 flex h-32 w-full max-w-[calc(100vw-3rem)] justify-center overflow-hidden rounded-lg border border-emerald-300/50 bg-emerald-100 sm:max-w-xl dark:border-emerald-950">

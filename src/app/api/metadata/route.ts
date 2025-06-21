@@ -26,7 +26,10 @@ async function getMetadata(url: string): Promise<Metadata | null> {
 
     return {
       title: $('title').text(),
-      description: $('meta[name="description"]').attr('content') || '',
+      description:
+        $('meta[name="description"]').attr('content') ||
+        $('meta[name="twitter:description"]').attr('content') ||
+        '',
       image:
         $('meta[property="og:image"]').attr('content') ||
         $('meta[name="twitter:image"]').attr('content') ||

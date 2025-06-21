@@ -1,7 +1,8 @@
-import { ResourceLink } from '@/components/ResourceLink';
-import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import Container from '@/components/Container';
+import { ResourceLinkList } from '@/components/ResourceLink';
+import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
+import learning from '@/data/resources/learning.json';
 
 export default function LearningPage() {
   return (
@@ -21,17 +22,7 @@ export default function LearningPage() {
           </div>
 
           {/* Project Cards */}
-          <div>
-            <div className="flex flex-col gap-6">
-              <FadeIn>
-                <ResourceLink
-                  title="The Web Can Do That? — Google"
-                  description="Discover how you can enhance your web app’s powers with the web of today."
-                  href="https://thewebshowcase.withgoogle.com/"
-                />
-              </FadeIn>
-            </div>
-          </div>
+          <ResourceLinkList data={learning} />
         </div>
       </Container>
     </FadeInStagger>

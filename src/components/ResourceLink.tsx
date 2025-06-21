@@ -2,10 +2,17 @@
 
 import { ArrowUpRightMiniIcon } from '@/components/Icons';
 import { Metadata, Resource } from '@/lib/types';
-import { FadeIn } from './animations/FadeIn';
+import { FadeIn } from '@/components/animations/FadeIn';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion } from 'motion/react';
-import { Skeleton } from './ui/Skeleton';
+import { Skeleton } from '@/components/ui/Skeleton';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/Card';
 
 function MetadataCard({
   url,
@@ -31,8 +38,12 @@ function MetadataCard({
         const data = await res.json();
         setMetadata(data);
       } catch (error) {
-        if (error.name === 'AbortError') return; // request was cancelled
-        console.error('Failed to load metadata', error);
+        if (error instanceof Error) {
+          if (error.name === 'AbortError') return; // request was cancelled
+          console.error('Failed to load metadata', error);
+        } else {
+          console.error('Unknown error', error);
+        }
         setMetadata(null);
       } finally {
         setLoading(false);
@@ -62,38 +73,46 @@ function MetadataCard({
         opacity: cardPosition.visible ? 1 : 0,
       }}
       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-      className="absolute left-full ml-6 hidden w-64 rounded-xl border border-neutral-200 bg-white p-4 shadow-lg xl:block dark:border-neutral-700 dark:bg-neutral-900"
+      className="hidden lg:absolute lg:left-full lg:ml-6 lg:block"
     >
-      {loading || !metadata ? (
-        <div className="space-y-3">
-          <Skeleton className="h-32 w-full" />
-          <Skeleton className="h-3 w-full" />
-          <Skeleton className="h-3 w-5/6" />
-          <Skeleton className="h-3 w-4/6" />
-        </div>
-      ) : (
-        metadata && (
+      <Card className="w-72 dark:bg-neutral-900/70">
+        {loading || !metadata ? (
           <>
-            {metadata.image && (
-              <img
-                src={
-                  metadata.image.startsWith('/')
-                    ? concat(url, metadata.image)
-                    : metadata.image
-                }
-                alt={metadata.title}
-                className="mb-3 h-32 w-full rounded-md object-cover"
-              />
-            )}
-            <h4 className="line-clamp-2 text-lg font-semibold text-neutral-900 dark:text-white">
-              {metadata.title}
-            </h4>
-            <p className="mt-1 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-300">
-              {metadata.description}
-            </p>
+            <CardContent className="p-4 pb-0">
+              <Skeleton className="h-32 w-full" />
+            </CardContent>
+            <CardHeader className="p-4">
+              <Skeleton className="h-3 w-full" />
+              <Skeleton className="h-3 w-5/6" />
+              <Skeleton className="h-3 w-4/6" />
+            </CardHeader>
           </>
-        )
-      )}
+        ) : (
+          metadata && (
+            <>
+              {metadata.image && (
+                <CardContent className="p-4 pb-0">
+                  <img
+                    src={
+                      metadata.image.startsWith('/')
+                        ? concat(url, metadata.image)
+                        : metadata.image
+                    }
+                    alt={metadata.title}
+                    className="mb-3 h-32 w-full rounded-md object-cover"
+                  />
+                </CardContent>
+              )}
+              <CardHeader className="p-4">
+                <CardTitle className="line-clamp-1">{metadata.title}</CardTitle>
+                <CardDescription className="line-clamp-2">
+                  {metadata.description}
+                </CardDescription>
+              </CardHeader>
+            </>
+          )
+        )}
+      </Card>
     </motion.div>
   );
 }
@@ -103,29 +122,34 @@ function ResourceLinkList({ data }: { data: Resource[] }) {
   const [cardPosition, setCardPosition] = useState({ top: 0, visible: false });
   const [hoveredItem, setHoveredItem] = useState<Resource | null>(null);
 
+  const cardElevationPx = 54;
+
   const handleMouseEnter = useCallback(
     (e: React.MouseEvent, item: Resource) => {
       const itemTop = (e.target as HTMLElement).getBoundingClientRect().top;
       const containerTop =
         containerRef.current?.getBoundingClientRect().top ?? 0;
-      setCardPosition({ top: itemTop - containerTop, visible: true });
+      setCardPosition({
+        top: itemTop - containerTop - cardElevationPx,
+        visible: true,
+      });
       setHoveredItem(item);
     },
     [],
   );
 
   const handleMouseLeave = useCallback(() => {
-    // setCardPosition((pos) => ({ ...pos, visible: false }));
-    // setHoveredItem(null);
+    setCardPosition((pos) => ({ ...pos, visible: false }));
+    setHoveredItem(null);
   }, []);
 
   return (
-    <div className="relative flex" ref={containerRef}>
+    <div className="relative flex lg:-mx-4" ref={containerRef}>
       <div className="flex flex-col divide-y divide-neutral-800">
         {data.map((item, index) => (
           <FadeIn key={index}>
             <div
-              className="py-6"
+              className="py-6 lg:px-4 lg:transition-colors dark:lg:hover:bg-neutral-900/70"
               onMouseEnter={(e) => handleMouseEnter(e, item)}
               onMouseLeave={handleMouseLeave}
             >
