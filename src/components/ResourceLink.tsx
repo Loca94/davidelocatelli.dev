@@ -37,7 +37,7 @@ function MetadataCard({
         );
         const data = await res.json();
         setMetadata(data);
-      } catch (error) {
+      } catch (error: any) {
         if (error instanceof Error) {
           if (error.name === 'AbortError') return; // request was cancelled
           console.error('Failed to load metadata', error);
