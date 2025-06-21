@@ -24,6 +24,11 @@ const Reel = ({ spinningIcons, spinDuration, delay }: ReelProps) => {
       >
         {spinningIcons.map((iconName, index) => {
           const Icon = IconComponents[iconName];
+          if (!Icon) {
+            console.warn(`Icon "${iconName}" not found in IconComponents.`);
+            return null;
+          }
+
           return (
             <div key={index} className="flex h-16 items-center justify-center">
               <Icon className="size-8 text-neutral-300" />
