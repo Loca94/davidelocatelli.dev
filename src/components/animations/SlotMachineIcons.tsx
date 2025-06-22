@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'motion/react';
-import * as IconComponents from '@/components/Icons';
 import { IconName } from '@/lib/types';
+import { RandomIconComponents } from '@/lib/generateRandomIcons';
 
 type ReelProps = {
   spinningIcons: IconName[];
@@ -23,7 +23,7 @@ const Reel = ({ spinningIcons, spinDuration, delay }: ReelProps) => {
         }}
       >
         {spinningIcons.map((iconName, index) => {
-          const Icon = IconComponents[iconName];
+          const Icon = RandomIconComponents[iconName];
           if (!Icon) {
             console.warn(`Icon "${iconName}" not found in IconComponents.`);
             return null;
