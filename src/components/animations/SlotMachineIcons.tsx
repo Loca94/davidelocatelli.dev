@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'motion/react';
+import { motion, useReducedMotion } from 'motion/react';
 import { IconName } from '@/lib/types';
 import { RandomIconComponents } from '@/lib/generateRandomIcons';
 
@@ -11,16 +11,24 @@ type ReelProps = {
 };
 
 const Reel = ({ spinningIcons, spinDuration, delay }: ReelProps) => {
+  let shouldReduceMotion = useReducedMotion();
+
   return (
     <div className="relative m-1.5 h-32 w-16 overflow-hidden rounded-lg border-2 border-neutral-600/50 bg-neutral-950 md:m-3">
       <motion.div
         className="flex flex-col will-change-transform"
         initial={{ y: 0 }}
-        animate={{ y: ['0%', '-87.5%'] }}
-        transition={{
-          duration: (spinDuration + delay) / 1000,
-          ease: 'easeInOut',
+        animate={{
+          y: shouldReduceMotion ? ['-87.5%', '-87.5%'] : ['0%', '-87.5%'],
         }}
+        transition={
+          shouldReduceMotion
+            ? undefined
+            : {
+                duration: (spinDuration + delay) / 1000,
+                ease: 'easeInOut',
+              }
+        }
       >
         {spinningIcons.map((iconName, index) => {
           const Icon = RandomIconComponents[iconName];
