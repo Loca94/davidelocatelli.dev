@@ -31,7 +31,7 @@ export default function Home() {
               <li>
                 <Link
                   href="about"
-                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-500"
                 >
                   About
                 </Link>
@@ -41,7 +41,7 @@ export default function Home() {
               <li>
                 <Link
                   href="projects"
-                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-500"
                 >
                   Projects
                 </Link>
@@ -51,7 +51,7 @@ export default function Home() {
               <li>
                 <Link
                   href="resources"
-                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-800 transition duration-300 dark:text-neutral-200 dark:hover:text-emerald-500"
                 >
                   Resources
                 </Link>
@@ -66,7 +66,7 @@ export default function Home() {
               <li>
                 <a
                   href="mailto:davidelocatelli.dev@gmail.com"
-                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-500"
                 >
                   Email
                 </a>
@@ -76,7 +76,7 @@ export default function Home() {
               <li>
                 <a
                   href="/Davide_Locatelli_-_Resume.pdf"
-                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-500"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -89,7 +89,7 @@ export default function Home() {
                 <a
                   href="https://www.linkedin.com/in/davide-locatelli-dev/"
                   target="_blank"
-                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-500"
                 >
                   LinkedIn
                 </a>
@@ -100,7 +100,7 @@ export default function Home() {
                 <a
                   href="https://github.com/Loca94/"
                   target="_blank"
-                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-600"
+                  className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-500"
                 >
                   Github
                 </a>

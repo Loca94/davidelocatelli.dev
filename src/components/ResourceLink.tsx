@@ -14,6 +14,22 @@ import {
   CardTitle,
 } from '@/components/ui/Card';
 
+function MetadataCardSkeleton() {
+  return (
+    <>
+      <CardContent className="p-4 pb-0">
+        <Skeleton className="h-32 w-full" />
+      </CardContent>
+      <CardHeader className="p-4">
+        <Skeleton className="h-3 w-full dark:bg-neutral-700" />
+        <Skeleton className="h-3 w-9/10" />
+        <Skeleton className="h-3 w-5/6" />
+        <Skeleton className="h-3 w-4/6" />
+      </CardHeader>
+    </>
+  );
+}
+
 function MetadataCard({
   url,
   cardPosition,
@@ -22,14 +38,16 @@ function MetadataCard({
   cardPosition: { top: number; visible: boolean };
 }) {
   const [metadata, setMetadata] = useState<Metadata | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [isMetadataLoading, setIsMetadataLoading] = useState(true);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
 
     const fetchMetadata = async () => {
-      setLoading(true);
+      setIsMetadataLoading(true);
+      setIsImageLoaded(false);
       try {
         const res = await fetch(
           `/api/metadata?url=${encodeURIComponent(url)}`,
@@ -46,7 +64,7 @@ function MetadataCard({
         }
         setMetadata(null);
       } finally {
-        setLoading(false);
+        setIsMetadataLoading(false);
       }
     };
 
@@ -76,36 +94,50 @@ function MetadataCard({
       className="hidden lg:absolute lg:left-full lg:ml-6 lg:block"
     >
       <Card className="w-72 dark:bg-neutral-900/70">
-        {loading || !metadata ? (
+        {isMetadataLoading || !metadata ? (
           <>
-            <CardContent className="p-4 pb-0">
-              <Skeleton className="h-32 w-full" />
-            </CardContent>
-            <CardHeader className="p-4">
-              <Skeleton className="h-3 w-full" />
-              <Skeleton className="h-3 w-5/6" />
-              <Skeleton className="h-3 w-4/6" />
-            </CardHeader>
+            <MetadataCardSkeleton />
           </>
         ) : (
           metadata && (
             <>
               {metadata.image && (
                 <CardContent className="p-4 pb-0">
-                  <img
-                    src={
-                      metadata.image.startsWith('/')
-                        ? concat(url, metadata.image)
-                        : metadata.image
-                    }
-                    alt={metadata.title}
-                    className="mb-3 h-32 w-full rounded-md object-cover"
-                  />
+                  <div className="relative h-32 w-full overflow-hidden rounded-md">
+                    <motion.img
+                      src={
+                        metadata.image.startsWith('/')
+                          ? concat(url, metadata.image)
+                          : metadata.image
+                      }
+                      alt={metadata.title}
+                      className="h-full w-full object-cover"
+                      onLoad={() => setIsImageLoaded(true)}
+                      initial="hidden"
+                      animate={isImageLoaded ? 'visible' : 'hidden'}
+                      variants={{
+                        hidden: {
+                          opacity: 0,
+                          clipPath: 'inset(5%)',
+                          scale: 1.1111,
+                        },
+                        visible: {
+                          opacity: 1,
+                          clipPath: 'inset(0%)',
+                          scale: 1,
+                          transition: {
+                            duration: 0.8,
+                            ease: 'easeOut',
+                          },
+                        },
+                      }}
+                    />
+                  </div>
                 </CardContent>
               )}
               <CardHeader className="p-4">
                 <CardTitle className="line-clamp-1">{metadata.title}</CardTitle>
-                <CardDescription className="line-clamp-2">
+                <CardDescription className="line-clamp-3">
                   {metadata.description}
                 </CardDescription>
               </CardHeader>
