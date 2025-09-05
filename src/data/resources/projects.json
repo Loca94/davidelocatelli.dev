@@ -1,0 +1,23 @@
+[
+  {
+    "title": "UI & UX Designer Portfolio",
+    "link": "https://www.saracosmai.com/",
+    "description": "Next.js portfolio for a product designer, highlighting projects and case studies through a minimal and responsive layout.",
+    "year": "2024",
+    "tags": ["Next.js", "Tailwind CSS", "Framer Motion", "Shadcn UI"]
+  },
+  {
+    "title": "Dental Office Website",
+    "link": "https://www.dentista-aosta.com/",
+    "description": "Responsive website developed with SvelteKit for a dental clinic, emphasizing usability, performance, and clean design.",
+    "year": "2023",
+    "tags": ["SvelteKit", "Lottie", "Tailwind CSS"]
+  },
+  {
+    "title": "Winery Website",
+    "link": "https://www.dibarro.com/",
+    "description": "A SvelteKit‑developed website showcasing a family‑run mountain winery, spotlighting their 18,000–20,000 bottle output, local territoir, sustainable viticulture practices, and evolved label design.",
+    "year": "2022",
+    "tags": ["SvelteKit", "Tailwind CSS", "i18n"]
+  }
+]

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { Logo } from '@/components/Icons';
+import { Logo } from '@/components/Logos';
 import Container from '@/components/Container';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import AboutPhoto from '@/images/about-photo.webp';

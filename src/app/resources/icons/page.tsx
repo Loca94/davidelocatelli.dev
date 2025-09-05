@@ -8,14 +8,14 @@ import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import {
   BootstrapIconsLogo,
   BoxiconsLogo,
-  CSSggIcon,
+  CSSggLogo,
   FeatherIconsLogo,
   GithubLogo,
   HealthIconsLogo,
   HeroiconsLogo,
   PhosphorIconsLogo,
   TablersIconsLogo,
-} from '@/components/Icons';
+} from '@/components/Logos';
 
 export const metadata: Metadata = {
   title: 'Icons - Resources',
@@ -47,7 +47,7 @@ export default function IconsPage() {
     'Feather Icons': <FeatherIconsLogo className={iconsClasses} />,
     'Tabler Icons': <TablersIconsLogo className={iconsClasses} />,
     Octicons: <GithubLogo className={iconsClasses} />,
-    'CSS.gg': <CSSggIcon className={iconsClasses} />,
+    'CSS.gg': <CSSggLogo className={iconsClasses} />,
   };
 
   return (
