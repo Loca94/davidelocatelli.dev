@@ -95,7 +95,7 @@ export function AnimatedBtnBorder({
         }}
         transition={{ ease: 'linear', duration: duration ?? 1 }}
       />
-      <div className="absolute inset-[2px] z-1 flex-none rounded-[100px] bg-neutral-950" />
+      <div className="absolute inset-[2px] z-1 flex-none rounded-full bg-neutral-950" />
     </Button>
   );
 }
