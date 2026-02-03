@@ -15,6 +15,9 @@ import { Badge } from '@/components/ui/Badge';
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'Things I’ve made in my free time.',
+  alternates: {
+    canonical: '/projects',
+  },
 };
 
 function ProjectCard({
@@ -37,11 +40,11 @@ function ProjectCard({
       target="_blank"
       rel="noopener noreferrer"
     >
-      <Card className="transition-colors dark:group-hover:border-neutral-400">
+      <Card className="transition-colors dark:group-hover:border-neutral-400 dark:group-hover:bg-neutral-900/50">
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle>{title}</CardTitle>
-            <ArrowUpRightMiniIcon className="size-5 text-neutral-700 transition group-hover:rotate-45 group-focus:rotate-45 dark:group-hover:text-neutral-100 dark:group-focus:text-neutral-100" />
+            <ArrowUpRightMiniIcon className="size-5 text-neutral-700 transition ease-out group-hover:rotate-45 group-focus:rotate-45 dark:group-hover:text-neutral-100 dark:group-focus:text-neutral-100" />
           </div>
           <CardDescription className="mt-3">{description}</CardDescription>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -92,7 +95,7 @@ export default function ProjectsPage() {
               <FadeIn>
                 <Card
                   tabIndex={0}
-                  className="group transition-colors dark:hover:border-neutral-400"
+                  className="group transition-colors dark:hover:border-neutral-400 dark:hover:bg-neutral-900/50"
                 >
                   <CardHeader>
                     <div className="flex items-center justify-between">

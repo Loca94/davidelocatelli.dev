@@ -4,12 +4,16 @@ import { GeistSans } from 'geist/font/sans';
 import Header from '@/components/Header';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://davidelocatelli.dev'),
   title: {
     template: '%s - Davide Locatelli',
     default: 'Davide Locatelli - Software Engineer',
   },
   description:
     "I'm Davide, a software engineer based in Italy. Currently building accessible and inclusive products at Accenture.",
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({

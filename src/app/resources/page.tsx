@@ -6,13 +6,16 @@ import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import StackingWebsites from '@/components/animations/StackingWebsites';
 import SlotMachineIcons from '@/components/animations/SlotMachineIcons';
 import MorphingButton from '@/components/animations/MorphingButton';
-import { generateRandomIcons } from '@/lib/generateRandomIcons';
+import { generateRandomIcons } from '@/lib/utils/icons-utils';
 import { DotPattern } from '@/components/patterns/DotPattern';
 
 export const metadata: Metadata = {
   title: 'Resources',
   description:
     'A collection of useful resources on programming, product design and more.',
+  alternates: {
+    canonical: '/resources',
+  },
 };
 
 export default function ResourcesPage() {

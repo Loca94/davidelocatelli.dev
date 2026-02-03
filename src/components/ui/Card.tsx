@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tailwind-utils';
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -13,7 +13,7 @@ const Card = React.forwardRef<
     className={cn(
       'rounded-xl border border-neutral-200 bg-white text-neutral-950 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-50',
       topGradient &&
-        "before:absolute before:left-4 before:right-4 before:top-0 before:h-[1px] before:rounded-xl before:bg-linear-to-r before:from-transparent before:via-neutral-500 before:to-transparent before:content-['']",
+        "before:absolute before:top-0 before:right-4 before:left-4 before:h-[1px] before:rounded-xl before:bg-linear-to-r before:from-transparent before:via-neutral-500 before:to-transparent before:content-['']",
       className,
     )}
     {...props}
@@ -39,7 +39,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn('font-semibold leading-none tracking-tight', className)}
+    className={cn('leading-none font-semibold tracking-tight', className)}
     {...props}
   />
 ));

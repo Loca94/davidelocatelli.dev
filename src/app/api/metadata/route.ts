@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as cheerio from 'cheerio';
-import { Metadata } from '@/lib/types';
+import { Metadata } from '@/lib/models/resource';
 
 export async function GET(req: NextRequest) {
   const url = req.nextUrl.searchParams.get('url');

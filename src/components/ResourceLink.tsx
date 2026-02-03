@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowUpRightMiniIcon } from '@/components/Icons';
-import { Metadata, Resource } from '@/lib/types';
+import { Metadata, Resource } from '@/lib/models/resource';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion } from 'motion/react';
@@ -177,7 +177,7 @@ function ResourceLinkList({ data }: { data: Resource[] }) {
 
   return (
     <div className="relative flex lg:-mx-4" ref={containerRef}>
-      <div className="flex flex-col divide-y divide-neutral-800">
+      <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-800">
         {data.map((item, index) => (
           <FadeIn key={index}>
             <div

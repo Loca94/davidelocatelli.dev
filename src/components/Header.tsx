@@ -4,7 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tailwind-utils';
 import { Logo } from '@/components/Logos';
 import Container from '@/components/Container';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';

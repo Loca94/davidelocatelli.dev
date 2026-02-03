@@ -40,7 +40,7 @@ import {
   WindmillIcon,
   YarnIcon,
 } from '@/components/Icons';
-import { IconName } from './types';
+import { IconName } from '@/lib/models/icons';
 
 const iconList = [
   { name: 'AddressBookTabsIcon', component: AddressBookTabsIcon },

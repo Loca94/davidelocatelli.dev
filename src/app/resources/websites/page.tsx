@@ -8,6 +8,9 @@ import { ResourceLinkList } from '@/components/ResourceLink';
 export const metadata: Metadata = {
   title: 'Websites - Resources',
   description: 'A curated list of websites I use for inspiration.',
+  alternates: {
+    canonical: '/resources/websites',
+  },
 };
 
 export default function IconsPage() {

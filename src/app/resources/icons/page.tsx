@@ -20,6 +20,9 @@ import {
 export const metadata: Metadata = {
   title: 'Icons - Resources',
   description: 'A curated list of icon sets I used in my previous projects.',
+  alternates: {
+    canonical: '/resources/icons',
+  },
 };
 
 function IconCard({ icon, title }: { icon: JSX.Element; title: string }) {

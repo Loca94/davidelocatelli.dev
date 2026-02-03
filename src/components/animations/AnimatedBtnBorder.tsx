@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 import { motion } from 'motion/react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils/tailwind-utils';
 import { Button } from '@/components/ui/Button';
 
 type Direction = 'TOP' | 'LEFT' | 'BOTTOM' | 'RIGHT';

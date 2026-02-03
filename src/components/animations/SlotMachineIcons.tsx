@@ -1,8 +1,8 @@
 'use client';
 
 import { motion, useReducedMotion } from 'motion/react';
-import { IconName } from '@/lib/types';
-import { RandomIconComponents } from '@/lib/generateRandomIcons';
+import { IconName } from '@/lib/models/icons';
+import { RandomIconComponents } from '@/lib/utils/icons-utils';
 
 type ReelProps = {
   spinningIcons: IconName[];

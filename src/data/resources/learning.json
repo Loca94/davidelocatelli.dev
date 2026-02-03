@@ -7,6 +7,18 @@
     "link": "https://developer.mozilla.org/"
   },
   {
+    "title": "Refactoring UI",
+    "description": "Learn how to design beautiful user interfaces by yourself using specific tactics explained from a developer's point-of-view.",
+    "tags": ["design", "ui"],
+    "url": "https://refactoringui.com/"
+  },
+  {
+    "title": "Zajno Digital Studio",
+    "description": "Motion is a website that showcases the power of UI/UX animation in conveying the mood and character of a brand.",
+    "tags": ["design", "ui", "ux", "animations"],
+    "url": "https://motion.zajno.com/"
+  },
+  {
     "title": "The Web Can Do That? — Google",
     "description": "Discover how you can enhance your web app’s powers with the web of today.",
     "tags": ["web", "docs"],
