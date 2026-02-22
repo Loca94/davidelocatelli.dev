@@ -1,63 +1,40 @@
-import * as shiki from 'shiki';
+import { createHighlighter } from 'shiki';
 import { visit } from 'unist-util-visit';
-import { mdxAnnotations } from 'mdx-annotations';
-
-let highlighter;
-
-async function getHighlighter() {
-  if (!highlighter) {
-    highlighter = await shiki.getHighlighter({
-      theme: 'css-variables', // Custom theme with CSS variables
-    });
-  }
-  return highlighter;
-}
-
-function rehypeParseCodeBlocks() {
-  return (tree) => {
-    visit(tree, 'element', (node, _nodeIndex, parentNode) => {
-      if (node.tagName === 'code' && node.properties.className) {
-        parentNode.properties.language = node.properties.className[0]?.replace(
-          /^language-/,
-          '',
-        );
-      }
-    });
-  };
-}
+import { fromHtml } from 'hast-util-from-html';
 
 function rehypeShiki() {
   return async (tree) => {
-    const highlighter = await getHighlighter();
+    const highlighter = await createHighlighter({
+      themes: ['poimandres', 'github-light'],
+      langs: ['javascript', 'typescript', 'tsx', 'css', 'html', 'json'],
+    });
 
-    visit(tree, 'element', (node) => {
-      if (node.tagName === 'pre' && node.children[0]?.tagName === 'code') {
+    visit(tree, 'element', (node, index, parent) => {
+      if (!parent) return;
+
+      if (node.tagName === 'pre' && node.children?.[0]?.tagName === 'code') {
         const codeNode = node.children[0];
-        const textNode = codeNode.children[0];
+        const textNode = codeNode.children?.[0];
+        if (!textNode?.value) return;
 
-        node.properties.code = textNode.value;
+        const className = codeNode.properties?.className?.[0] ?? '';
+        const lang = className.replace('language-', '') || 'text';
 
-        if (node.properties.language) {
-          const tokens = highlighter.codeToThemedTokens(
-            textNode.value,
-            node.properties.language,
-          );
+        const html = highlighter.codeToHtml(textNode.value, {
+          lang,
+          themes: {
+            light: 'github-light',
+            dark: 'poimandres',
+          },
+          defaultColor: false,
+        });
 
-          textNode.value = shiki.renderToHtml(tokens, {
-            elements: {
-              pre: ({ children }) => children,
-              code: ({ children }) => children,
-              line: ({ children }) => `<span>${children}</span>`,
-            },
-          });
-        }
+        const hast = fromHtml(html, { fragment: true });
+
+        parent.children[index] = hast.children[0];
       }
     });
   };
 }
 
-export const rehypePlugins = [
-  mdxAnnotations.rehype,
-  rehypeParseCodeBlocks,
-  rehypeShiki,
-];
+export const rehypePlugins = [rehypeShiki];

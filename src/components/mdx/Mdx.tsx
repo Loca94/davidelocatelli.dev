@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 export const a = Link;
 export { Button } from '@/components/ui/Button';
-export { Code as code, Pre as pre } from '@/components/mdx/Code';
 
 export function MdxLayout({
   article,

@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-
+@plugin '@tailwindcss/typography';
 @config '../../tailwind.config.ts';
 
 /*
@@ -17,6 +17,24 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer components {
+  .shiki {
+    @apply overflow-x-auto border border-neutral-200 dark:border-neutral-700;
+  }
+
+  html.dark .shiki,
+  html.dark .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+  }
+
+  html.light .shiki,
+  html.light .shiki span {
+    color: var(--shiki-light) !important;
+    background-color: var(--shiki-light-bg) !important;
   }
 }
 

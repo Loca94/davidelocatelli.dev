@@ -17,7 +17,8 @@ function Article({ article }: { article: ArticleWithSlug }) {
 
 export const metadata: Metadata = {
   title: 'Articles',
-  description: 'Add a meta-description fot the article page.',
+  description:
+    'A curated collection of frontend articles exploring CSS, JavaScript, performance, and creative UI experiments by a frontend developer.',
   alternates: {
     canonical: '/articles',
   },
