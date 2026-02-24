@@ -1,7 +1,7 @@
-import Container from '@/components/Container';
-import { ResourceLinkList } from '@/components/ResourceLink';
-import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
-import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
+import Container from '@/components/container';
+import { ResourceLinkList } from '@/components/resource-link';
+import { FadeInStagger, FadeIn } from '@/components/animations/fade-in';
+import { PageDescription, PageTitle } from '@/components/ui/page-layout';
 import learning from '@/data/resources/learning.json';
 
 export default function LearningPage() {

@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
-import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
-import Container from '@/components/Container';
-import { TriangleIcon } from '@/components/Icons';
-import { LetsTalkButton } from '@/components/animations/AnimatedBtnBorder';
+import { FadeIn, FadeInStagger } from '@/components/animations/fade-in';
+import Container from '@/components/container';
+import { TriangleIcon } from '@/components/icons/triangle-icon';
+import { LetsTalkButton } from '@/components/animations/animated-btn-border';
 
 export const metadata: Metadata = {
   title: 'About',

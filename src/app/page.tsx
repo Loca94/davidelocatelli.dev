@@ -1,6 +1,6 @@
-import Container from '@/components/Container';
-import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
-import { PageTitle } from '@/components/ui/PageLayout';
+import Container from '@/components/container';
+import { FadeInStagger, FadeIn } from '@/components/animations/fade-in';
+import { PageTitle } from '@/components/ui/page-layout';
 import Link from 'next/link';
 
 export default function Home() {

@@ -1,46 +1,43 @@
-import {
-  AddressBookTabsIcon,
-  AirplaneIcon,
-  AlarmIcon,
-  AvocadoIcon,
-  BarcodeIcon,
-  BellIcon,
-  BicycleIcon,
-  BluetoothIcon,
-  BoneIcon,
-  BowlSteamIcon,
-  BrainIcon,
-  BroomIcon,
-  BrowsersIcon,
-  CameraIcon,
-  CarrotIcon,
-  ChartBarIcon,
-  ChefHatIcon,
-  CpuIcon,
-  DropIcon,
-  FeatherIcon,
-  FloppyDiskIcon,
-  GameControllerIcon,
-  HamburgerIcon,
-  HandPeaceIcon,
-  IceCreamIcon,
-  LegoIcon,
-  LightningIcon,
-  MapPinIcon,
-  MeteorIcon,
-  MountainIcon,
-  MouseMiddleClickIcon,
-  OnigiriIcon,
-  PenNibIcon,
-  RadioactiveIcon,
-  ThumbsUpIcon,
-  TruckTrailerIcon,
-  VideoConferenceIcon,
-  WavesIcon,
-  WindmillIcon,
-  YarnIcon,
-} from '@/components/Icons';
-import { IconName } from '@/lib/models/icons';
+import { AddressBookTabsIcon } from '@/components/icons/address-book-tabs-icon';
+import { AirplaneIcon } from '@/components/icons/airplane-icon';
+import { AlarmIcon } from '@/components/icons/alarm-icon';
+import { AvocadoIcon } from '@/components/icons/avocado-icon';
+import { BarcodeIcon } from '@/components/icons/barcode-icon';
+import { BellIcon } from '@/components/icons/bell-icon';
+import { BicycleIcon } from '@/components/icons/bicycle-icon';
+import { BluetoothIcon } from '@/components/icons/bluetooth-icon';
+import { BoneIcon } from '@/components/icons/bone-icon';
+import { BowlSteamIcon } from '@/components/icons/bow-steam-icon';
+import { BrainIcon } from '@/components/icons/brain-icon';
+import { BroomIcon } from '@/components/icons/broom-icon';
+import { BrowsersIcon } from '@/components/icons/browser-icon';
+import { CameraIcon } from '@/components/icons/camera-icon';
+import { CarrotIcon } from '@/components/icons/carrot-icon';
+import { ChartBarIcon } from '@/components/icons/chart-bar-icon';
+import { ChefHatIcon } from '@/components/icons/chef-hat-icon';
+import { CpuIcon } from '@/components/icons/cpu-icon';
+import { DropIcon } from '@/components/icons/drop-icon';
+import { FeatherIcon } from '@/components/icons/feather-icon';
+import { FloppyDiskIcon } from '@/components/icons/floppy-disk-icon';
+import { GameControllerIcon } from '@/components/icons/game-controller-icon';
+import { HamburgerIcon } from '@/components/icons/hamburger-icon';
+import { HandPeaceIcon } from '@/components/icons/hand-piece-icon';
+import { IceCreamIcon } from '@/components/icons/ice-cream-icon';
+import { LegoIcon } from '@/components/icons/lego-icon';
+import { LightningIcon } from '@/components/icons/lightning-icon';
+import { MapPinIcon } from '@/components/icons/map-pin-icon';
+import { MeteorIcon } from '@/components/icons/meteor-icon';
+import { MountainIcon } from '@/components/icons/mountain-icon';
+import { MouseMiddleClickIcon } from '@/components/icons/mouse-middle-click-icon';
+import { OnigiriIcon } from '@/components/icons/onigiri-icon';
+import { PenNibIcon } from '@/components/icons/pen-nib-icon';
+import { RadioactiveIcon } from '@/components/icons/radioactive-icon';
+import { ThumbsUpIcon } from '@/components/icons/thumbs-up-icon';
+import { TruckTrailerIcon } from '@/components/icons/truck-trailer-icon';
+import { VideoConferenceIcon } from '@/components/icons/video-conference-icon';
+import { WavesIcon } from '@/components/icons/waves-icon';
+import { WindmillIcon } from '@/components/icons/windmill-icon';
+import { YarnIcon } from '@/components/icons/yarn-icon';
 
 const iconList = [
   { name: 'AddressBookTabsIcon', component: AddressBookTabsIcon },
@@ -89,7 +86,7 @@ export const RandomIconComponents = Object.fromEntries(
   iconList.map(({ name, component }) => [name, component]),
 );
 
-export function generateRandomIcons(count: number): IconName[] {
+export function generateRandomIcons(count: number): string[] {
   return Array.from(
     { length: count },
     () => iconList[Math.floor(Math.random() * iconList.length)].name,

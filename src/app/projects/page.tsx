@@ -1,16 +1,17 @@
 import { Metadata } from 'next';
-import Container from '@/components/Container';
-import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
-import { ArrowUpRightMiniIcon, LockKeyIcon } from '@/components/Icons';
-import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
+import Container from '@/components/container';
+import { FadeInStagger, FadeIn } from '@/components/animations/fade-in';
+import { ArrowUpRightMiniIcon } from '@/components/icons/arrow-up-right-icon';
+import { LockKeyIcon } from '@/components/icons/lock-key-icon';
+import { PageDescription, PageTitle } from '@/components/ui/page-layout';
 import projects from '@/data/resources/projects.json';
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
+} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export const metadata: Metadata = {
   title: 'Projects',

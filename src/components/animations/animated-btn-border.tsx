@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils/tailwind-utils';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 
 type Direction = 'TOP' | 'LEFT' | 'BOTTOM' | 'RIGHT';
 
@@ -60,7 +60,7 @@ export function AnimatedBtnBorder({
 
   return (
     <Button
-      className="relative h-min w-fit cursor-pointer content-center overflow-visible bg-neutral-950/20 decoration-clone p-px transition duration-500 hover:bg-neutral-950/10 dark:bg-white/20"
+      className="relative h-min w-fit cursor-pointer content-center overflow-visible bg-neutral-950/20 box-decoration-clone p-px transition duration-500 hover:bg-neutral-950/10 dark:bg-white/20"
       variant="ghost"
       onClick={handleClick}
       onMouseEnter={() => {
@@ -95,7 +95,7 @@ export function AnimatedBtnBorder({
         }}
         transition={{ ease: 'linear', duration: duration ?? 1 }}
       />
-      <div className="absolute inset-[2px] z-1 flex-none rounded-full bg-neutral-950" />
+      <div className="absolute inset-0.5 z-1 flex-none rounded-full bg-neutral-950" />
     </Button>
   );
 }

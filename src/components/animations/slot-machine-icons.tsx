@@ -1,11 +1,10 @@
 'use client';
 
 import { motion, useReducedMotion } from 'motion/react';
-import { IconName } from '@/lib/models/icons';
 import { RandomIconComponents } from '@/lib/utils/icons-utils';
 
 type ReelProps = {
-  spinningIcons: IconName[];
+  spinningIcons: string[];
   spinDuration: number;
   delay: number;
 };
@@ -46,8 +45,8 @@ const Reel = ({ spinningIcons, spinDuration, delay }: ReelProps) => {
       </motion.div>
 
       {/* Top and Bottom gradient overlay */}
-      <div className="pointer-events-none absolute top-0 right-0 left-0 z-10 h-8 bg-gradient-to-b from-white to-transparent dark:from-neutral-950" />
-      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-8 bg-gradient-to-t from-white to-transparent dark:from-neutral-950" />
+      <div className="pointer-events-none absolute top-0 right-0 left-0 z-10 h-8 bg-linear-to-b from-white to-transparent dark:from-neutral-950" />
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 z-10 h-8 bg-linear-to-t from-white to-transparent dark:from-neutral-950" />
     </div>
   );
 };
@@ -56,7 +55,7 @@ const SlotMachineIcons = ({
   reels,
   spinDuration = 3500,
 }: {
-  reels: IconName[][];
+  reels: string[][];
   spinDuration?: number;
 }) => {
   return (

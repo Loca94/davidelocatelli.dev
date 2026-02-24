@@ -1,21 +1,19 @@
 import type { JSX } from 'react';
 import type { Metadata } from 'next';
-import Container from '@/components/Container';
+import Container from '@/components/container';
 import icons from '@/data/resources/icons.json';
-import { Card, CardHeader } from '@/components/ui/Card';
-import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
-import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
-import {
-  BootstrapIconsLogo,
-  BoxiconsLogo,
-  CSSggLogo,
-  FeatherIconsLogo,
-  GithubLogo,
-  HealthIconsLogo,
-  HeroiconsLogo,
-  PhosphorIconsLogo,
-  TablersIconsLogo,
-} from '@/components/Logos';
+import { Card, CardHeader } from '@/components/ui/card';
+import { FadeInStagger, FadeIn } from '@/components/animations/fade-in';
+import { PageDescription, PageTitle } from '@/components/ui/page-layout';
+import { BootstrapIconsLogo } from '@/components/icons/logos/bootstrap-logo-icon';
+import { BoxiconsLogo } from '@/components/icons/logos/boxicons-logo-icon';
+import { CSSggLogo } from '@/components/icons/logos/css-gg-logo-icon';
+import { FeatherIconsLogo } from '@/components/icons/logos/feather-icons-logo-icon';
+import { GithubLogo } from '@/components/icons/logos/github-logo-icon';
+import { HealthIconsLogo } from '@/components/icons/logos/health-icons-logo-icon';
+import { HeroiconsLogo } from '@/components/icons/logos/heroicons-logo-icon';
+import { PhosphorIconsLogo } from '@/components/icons/logos/phosphor-icons-logo-icon';
+import { TablersIconsLogo } from '@/components/icons/logos/tablers-icons-logo-icon';
 
 export const metadata: Metadata = {
   title: 'Icons - Resources',

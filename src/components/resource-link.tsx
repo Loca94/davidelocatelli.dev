@@ -1,18 +1,18 @@
 'use client';
 
-import { ArrowUpRightMiniIcon } from '@/components/Icons';
+import { ArrowUpRightMiniIcon } from '@/components/icons/arrow-up-right-icon';
 import { Metadata, Resource } from '@/lib/models/resource';
-import { FadeIn } from '@/components/animations/FadeIn';
+import { FadeIn } from '@/components/animations/fade-in';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion } from 'motion/react';
-import { Skeleton } from '@/components/ui/Skeleton';
+import { Skeleton } from '@/components/ui/skeleton';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/Card';
+} from '@/components/ui/card';
 
 function MetadataCardSkeleton() {
   return (

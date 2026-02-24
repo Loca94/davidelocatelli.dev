@@ -1,7 +1,7 @@
 import '@/styles/tailwind.css';
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
-import Header from '@/components/Header';
+import Header from '@/components/header';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://davidelocatelli.dev'),

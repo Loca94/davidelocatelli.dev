@@ -59,13 +59,6 @@ const StackingWebsites = ({
   const [cards, setCards] = useState<WebsiteCard[]>(websites);
   let shouldReduceMotion = useReducedMotion();
 
-  useEffect(() => {
-    if (!shouldReduceMotion) {
-      startFlipping();
-      return () => clearInterval(interval);
-    }
-  }, [shouldReduceMotion]);
-
   const startFlipping = () => {
     interval = setInterval(() => {
       setCards((prevCards: any[]) => {
@@ -75,6 +68,13 @@ const StackingWebsites = ({
       });
     }, 5000);
   };
+
+  useEffect(() => {
+    if (!shouldReduceMotion) {
+      startFlipping();
+      return () => clearInterval(interval);
+    }
+  }, [shouldReduceMotion]);
 
   return (
     <div className="relative mt-6 h-40 w-full max-w-80 sm:mt-10 sm:max-w-lg">

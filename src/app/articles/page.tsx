@@ -1,6 +1,6 @@
 import { ArticleWithSlug } from '@/lib/models/article';
 import { getAllArticles } from '@/lib/utils/article-utils';
-import Container from '@/components/Container';
+import Container from '@/components/container';
 import { Metadata } from 'next';
 import Link from 'next/link';
 

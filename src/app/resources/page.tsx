@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Container from '@/components/Container';
-import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
-import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
-import StackingWebsites from '@/components/animations/StackingWebsites';
-import SlotMachineIcons from '@/components/animations/SlotMachineIcons';
-import MorphingButton from '@/components/animations/MorphingButton';
+import Container from '@/components/container';
+import { FadeInStagger, FadeIn } from '@/components/animations/fade-in';
+import { PageDescription, PageTitle } from '@/components/ui/page-layout';
+import StackingWebsites from '@/components/animations/stacking-websites';
+import SlotMachineIcons from '@/components/animations/slot-machine-icons';
+import MorphingButton from '@/components/animations/morphing-button';
 import { generateRandomIcons } from '@/lib/utils/icons-utils';
-import { DotPattern } from '@/components/patterns/DotPattern';
+import { DotPattern } from '@/components/patterns/dot-pattern';
 
 export const metadata: Metadata = {
   title: 'Resources',
