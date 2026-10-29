@@ -177,18 +177,18 @@ function ResourceLinkList({ data }: { data: Resource[] }) {
 
   return (
     <div className="relative flex lg:-mx-4" ref={containerRef}>
-      <div className="flex flex-col divide-y divide-neutral-200 dark:divide-neutral-800">
+      <div className="flex flex-col">
         {data.map((item, index) => (
           <FadeIn key={index}>
             <div
-              className="py-6 lg:px-4 lg:transition-colors dark:lg:hover:bg-neutral-900/70"
+              className="lg:transition-colors dark:lg:rounded-xl dark:lg:hover:bg-neutral-900/70"
               onMouseEnter={(e) => handleMouseEnter(e, item)}
               onMouseLeave={handleMouseLeave}
             >
               <a
                 href={item.link}
                 target="_blank"
-                className="group flex flex-col transition-colors duration-300"
+                className="group flex flex-col py-6 transition-colors duration-300 lg:px-4"
               >
                 <div className="flex items-center font-medium text-neutral-700 transition duration-300 group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100">
                   {item.title}

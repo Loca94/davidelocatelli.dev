@@ -1,22 +1,28 @@
-import { MdxLayout } from '@/components/mdx/Mdx';
+import { MdxLayout } from '@/components/mdx/mdx';
+import { Separator } from '@/components/mdx/separator';
+import { Container } from '@/components/container'
 
 export const article = {
-  author: 'Davide Locatelli',
-  publishDate: '2024-10-06',
-  title: 'Mastering CSS Counters: A Beginner to Advanced Guide',
-  description: 'Learn how to use the CSS content: counter() property to create dynamic, numbered elements on web pages. This guide covers counter-reset, counter-increment, and practical applications for developers.',
-  keywords: ['CSS counters', 'counter-reset', 'counter-increment', 'content: counter()', 'CSS pseudo-elements', 'numbering elements in CSS', 'CSS tutorial']
+    author: 'Davide Locatelli',
+    publishDate: '2024-10-06',
+    title: 'Mastering CSS Counters: A Beginner to Advanced Guide',
+    description: 'Learn how to use the CSS content: counter() property to create dynamic, numbered elements on web pages. This guide covers counter-reset, counter-increment, and practical applications for developers.',
+    keywords: ['CSS counters', 'counter-reset', 'counter-increment', 'content: counter()', 'CSS pseudo-elements', 'numbering elements in CSS', 'CSS tutorial'],
+    slug: 'next-change-favicon-with-theme'
 }
 
 export const metadata = {
-  title: article.title,
-  description: article.description,
+    title: article.title,
+    description: article.description
 }
 
 export default (props) => <MdxLayout article={article} {...props} />
 
+# Mastering CSS Counters
 
 CSS counters are a powerful feature for creating automatically incremented numbers on your webpage, making them great for things like numbering lists, sections, or custom elements without manually updating the HTML. They’re versatile, flexible, and can add both structure and style to your content. In this post, we’ll explore how CSS counters work, how to set them up, and several practical examples to make your projects more dynamic.
+
+<Separator />
 
 ## What are CSS Counters?
 
@@ -28,11 +34,21 @@ CSS counters allow you to keep track of the number of times an element is used i
 
 With these three properties, you can define and manage counters to keep track of items or sections without additional JavaScript or HTML adjustments.
 
-## Setting Up a Basic Counter
+<Separator />
+
+## Basic Counter
 
 Let’s start with a basic example of creating numbered headings in a list. Here’s how you’d set up a CSS counter to display numbers beside each heading.
 
-### Step 1: Initialize the Counter with `counter-reset`
+Let’s start with a basic example of creating numbered headings in a list. Here’s how you’d set up a CSS counter to display numbers beside each heading.
+
+Let’s start with a basic example of creating numbered headings in a list. Here’s how you’d set up a CSS counter to display numbers beside each heading.
+
+Let’s start with a basic example of creating numbered headings in a list. Here’s how you’d set up a CSS counter to display numbers beside each heading.
+
+<Separator />
+
+## Step 1
 
 To begin, we need to initialize the counter on a parent element, setting it up with `counter-reset`.
 
@@ -43,7 +59,9 @@ To begin, we need to initialize the counter on a parent element, setting it up w
 }
 ```
 
-### Step 2: Increment the Counter with counter-increment
+<Separator />
+
+## Step 2
 
 Next, on each child heading, use counter-increment to increase the counter each time it’s displayed.
 
@@ -53,7 +71,9 @@ h2 {
 }
 ```
 
-### Step 3: Display the Counter with `content: counter()`
+<Separator />
+
+## Step 3
 
 Finally, use `content: counter()` within a `::before` pseudo-element to display the incremented counter for each heading.
 
@@ -63,3 +83,5 @@ h2::before {
   font-weight: bold;
 }
 ```
+
+Lorem Ipsum is placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or typeface without using meaningful content. Derived from Latin, it has been the industry's standard dummy text since the 1500s, ensuring layouts look natural without distracting with readable

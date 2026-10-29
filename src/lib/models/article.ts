@@ -9,3 +9,9 @@ export interface Article {
 export interface ArticleWithSlug extends Article {
   slug: string;
 }
+
+export interface TocHeading {
+  level: number;
+  text: string;
+  slug: string;
+}

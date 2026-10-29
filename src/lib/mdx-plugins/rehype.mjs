@@ -1,6 +1,7 @@
 import { createHighlighter } from 'shiki';
 import { visit } from 'unist-util-visit';
 import { fromHtml } from 'hast-util-from-html';
+import rehypeSlug from 'rehype-slug';
 
 function rehypeShiki() {
   return async (tree) => {
@@ -37,4 +38,4 @@ function rehypeShiki() {
   };
 }
 
-export const rehypePlugins = [rehypeShiki];
+export const rehypePlugins = [rehypeShiki, rehypeSlug];

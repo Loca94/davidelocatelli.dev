@@ -7,7 +7,7 @@ import { LetsTalkButton } from '@/components/animations/animated-btn-border';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'I’m Davide Locatelli, a Full-Stack Developer with more than 5 years of experience.',
+    'I’m Davide Locatelli, a Full-Stack Developer with more than 7 years of experience.',
   alternates: {
     canonical: '/about',
   },
@@ -45,7 +45,7 @@ export default function About() {
                 </span>{' '}
                 with more than{' '}
                 <span className="font-medium text-neutral-200">
-                  5 years of experience
+                  7 years of experience
                 </span>
                 .
               </p>
