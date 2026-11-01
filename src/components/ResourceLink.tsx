@@ -2,7 +2,7 @@
 
 import { ArrowUpRightMiniIcon } from '@/components/Icons';
 import { Metadata, Resource } from '@/lib/types';
-import { FadeIn } from '@/components/animations/FadeIn';
+import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion } from 'motion/react';
 import { Skeleton } from '@/components/ui/Skeleton';
@@ -76,13 +76,6 @@ function MetadataCard({
     }; // Cancels fetch request on unmount
   }, [url]);
 
-  function concat(url: string, path: string): string {
-    if (path.startsWith('/')) {
-      return url.endsWith('/') ? url + path.slice(1) : url + path;
-    }
-    return url.concat(path);
-  }
-
   return (
     <motion.div
       initial={false}
@@ -105,11 +98,7 @@ function MetadataCard({
                 <CardContent className="p-4 pb-0">
                   <div className="relative h-32 w-full overflow-hidden rounded-md">
                     <motion.img
-                      src={
-                        metadata.image.startsWith('/')
-                          ? concat(url, metadata.image)
-                          : metadata.image
-                      }
+                      src={metadata.image}
                       alt={metadata.title}
                       className="h-full w-full object-cover"
                       onLoad={() => setIsImageLoaded(true)}
@@ -177,9 +166,9 @@ function ResourceLinkList({ data }: { data: Resource[] }) {
 
   return (
     <div className="relative flex lg:-mx-4" ref={containerRef}>
-      <div className="flex flex-col divide-y divide-neutral-800">
-        {data.map((item, index) => (
-          <FadeIn key={index}>
+      <FadeInStagger className="flex flex-col divide-y divide-neutral-800">
+        {data.map((item) => (
+          <FadeIn key={item.link}>
             <div
               className="py-6 lg:px-4 lg:transition-colors dark:lg:hover:bg-neutral-900/70"
               onMouseEnter={(e) => handleMouseEnter(e, item)}
@@ -202,7 +191,7 @@ function ResourceLinkList({ data }: { data: Resource[] }) {
             </div>
           </FadeIn>
         ))}
-      </div>
+      </FadeInStagger>
 
       {/* Floating Card */}
       {hoveredItem && (

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site';
 import Link from 'next/link';
 import Container from '@/components/Container';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
@@ -9,11 +10,12 @@ import MorphingButton from '@/components/animations/MorphingButton';
 import { generateRandomIcons } from '@/lib/generateRandomIcons';
 import { DotPattern } from '@/components/patterns/DotPattern';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Resources',
   description:
     'A collection of useful resources on programming, product design and more.',
-};
+  path: '/resources',
+});
 
 export default function ResourcesPage() {
   const reels = [

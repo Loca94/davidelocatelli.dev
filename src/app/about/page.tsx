@@ -1,14 +1,16 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site';
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
 import Container from '@/components/Container';
 import { TriangleIcon } from '@/components/Icons';
 import { LetsTalkButton } from '@/components/animations/AnimatedBtnBorder';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'About',
   description:
     'I’m Davide Locatelli, a Full-Stack Developer with more than 5 years of experience.',
-};
+  path: '/about',
+});
 
 export default function About() {
   const recentTechnologies = [

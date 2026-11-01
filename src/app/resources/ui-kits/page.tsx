@@ -8,6 +8,7 @@ import uiKits from '@/data/resources/ui-kits.json';
 export const metadata: Metadata = {
   title: 'UI Kits - Resources',
   description: '', // TODO: Add description
+  robots: { index: false }, // TODO: Remove once the page is finished
 };
 
 export default function UIKitPage() {

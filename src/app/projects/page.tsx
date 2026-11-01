@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site';
 import Container from '@/components/Container';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { ArrowUpRightMiniIcon, LockKeyIcon } from '@/components/Icons';
@@ -12,10 +13,11 @@ import {
 } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Projects',
   description: 'Things I’ve made in my free time.',
-};
+  path: '/projects',
+});
 
 function ProjectCard({
   link,

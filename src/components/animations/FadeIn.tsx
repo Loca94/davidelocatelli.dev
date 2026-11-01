@@ -1,54 +1,71 @@
-'use client';
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  type CSSProperties,
+  type ReactNode,
+} from 'react';
+import { cn } from '@/lib/utils';
 
-import { createContext, useContext } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+// CSS-only entrance animation (see `.fade-in` in tailwind.css).
+// Content is rendered visible in the server HTML and animated by the browser
+// as soon as the stylesheet loads, so it never waits for JS hydration.
 
-const FadeInStaggerContext = createContext(false);
+const STAGGER_MS = 120;
+const STAGGER_FASTER_MS = 80;
+const MAX_STAGGER_STEPS = 10; // Caps the delay on long lists
 
-const viewport = { once: true, margin: '0px 0px -200px' };
+type FadeInProps = React.HTMLAttributes<HTMLDivElement> & {
+  staggerIndex?: number;
+  staggerMs?: number;
+};
 
-export function FadeIn(
-  props: React.ComponentPropsWithoutRef<typeof motion.div>,
-) {
-  let shouldReduceMotion = useReducedMotion();
-  let isInStaggerGroup = useContext(FadeInStaggerContext);
+export function FadeIn({
+  staggerIndex = 0,
+  staggerMs = STAGGER_MS,
+  className,
+  style,
+  ...props
+}: FadeInProps) {
+  const delay = Math.min(staggerIndex, MAX_STAGGER_STEPS) * staggerMs;
 
   return (
-    <motion.div
-      variants={{
-        hidden: {
-          opacity: 0,
-          y: shouldReduceMotion ? 0 : 24,
-          filter: 'blur(8px)',
-        },
-        visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-      }}
-      transition={{ duration: 0.5 }}
-      {...(isInStaggerGroup
-        ? {}
-        : {
-            initial: 'hidden',
-            whileInView: 'visible',
-            viewport,
-          })}
+    <div
+      className={cn('fade-in', className)}
+      style={{ '--fade-in-delay': `${delay}ms`, ...style } as CSSProperties}
       {...props}
     />
   );
 }
 
+/**
+ * Assigns an increasing delay to every `FadeIn` nested (at any depth) in its
+ * children, in document order. Nested `FadeInStagger`s manage their own items.
+ */
 export function FadeInStagger({
   faster = false,
+  children,
   ...props
-}: React.ComponentPropsWithoutRef<typeof motion.div> & { faster?: boolean }) {
-  return (
-    <FadeInStaggerContext.Provider value={true}>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-        transition={{ staggerChildren: faster ? 0.08 : 0.12 }}
-        {...props}
-      />
-    </FadeInStaggerContext.Provider>
-  );
+}: React.HTMLAttributes<HTMLDivElement> & { faster?: boolean }) {
+  let index = 0;
+  const staggerMs = faster ? STAGGER_FASTER_MS : STAGGER_MS;
+
+  function assignDelays(node: ReactNode): ReactNode {
+    return Children.map(node, (child) => {
+      if (!isValidElement<{ children?: ReactNode }>(child)) return child;
+      if (child.type === FadeInStagger) return child;
+      if (child.type === FadeIn) {
+        return cloneElement(child as React.ReactElement<FadeInProps>, {
+          staggerIndex: index++,
+          staggerMs,
+        });
+      }
+      if (child.props.children === undefined) return child;
+      return cloneElement(child, {
+        children: assignDelays(child.props.children),
+      });
+    });
+  }
+
+  return <div {...props}>{assignDelays(children)}</div>;
 }

@@ -22,8 +22,9 @@ function FlipLogo({ pathname }: { pathname: string }) {
   const isAboutPage = pathname === '/about';
   let shouldReduceMotion = useReducedMotion();
 
+  // initial={false}: the logo is visible in the server HTML and only animates on route changes
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" initial={false}>
       <motion.div
         key={isAboutPage ? 'photo-container' : 'svg-container'}
         initial={{

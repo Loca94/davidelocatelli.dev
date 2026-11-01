@@ -9,8 +9,6 @@ type WebsiteCard = {
   backgroundColor: string;
 };
 
-let interval: any;
-
 const websites: WebsiteCard[] = [
   {
     id: 1,
@@ -60,21 +58,17 @@ const StackingWebsites = ({
   let shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
-    if (!shouldReduceMotion) {
-      startFlipping();
-      return () => clearInterval(interval);
-    }
-  }, [shouldReduceMotion]);
+    if (shouldReduceMotion) return;
 
-  const startFlipping = () => {
-    interval = setInterval(() => {
-      setCards((prevCards: any[]) => {
+    const interval = setInterval(() => {
+      setCards((prevCards) => {
         const newArray = [...prevCards]; // create a copy of the array
         newArray.unshift(newArray.pop()!); // move the last element to the front
         return newArray;
       });
     }, 5000);
-  };
+    return () => clearInterval(interval);
+  }, [shouldReduceMotion]);
 
   return (
     <div className="relative mt-6 h-40 w-full max-w-80 sm:mt-10 sm:max-w-lg">

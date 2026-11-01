@@ -1,5 +1,6 @@
 import type { JSX } from 'react';
 import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site';
 import Container from '@/components/Container';
 import icons from '@/data/resources/icons.json';
 import { Card, CardHeader } from '@/components/ui/Card';
@@ -17,10 +18,11 @@ import {
   TablersIconsLogo,
 } from '@/components/Logos';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Icons - Resources',
   description: 'A curated list of icon sets I used in my previous projects.',
-};
+  path: '/resources/icons',
+});
 
 function IconCard({ icon, title }: { icon: JSX.Element; title: string }) {
   return (
