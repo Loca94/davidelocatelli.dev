@@ -8,9 +8,17 @@ import { LetsTalkButton } from '@/components/animations/AnimatedBtnBorder';
 export const metadata: Metadata = pageMetadata({
   title: 'About',
   description:
-    'I’m Davide Locatelli, a Full-Stack Developer with more than 5 years of experience.',
+    'I’m Davide Locatelli, a full-stack Senior Developer with more than 8 years of experience in TypeScript, React, Angular, Svelte, Node.js and Spring Boot.',
   path: '/about',
 });
+
+function Highlight({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="font-medium text-neutral-900 dark:text-neutral-200">
+      {children}
+    </span>
+  );
+}
 
 export default function About() {
   const recentTechnologies = [
@@ -38,51 +46,37 @@ export default function About() {
           <div className="space-y-4 text-neutral-600 dark:text-neutral-400">
             <FadeIn>
               <p className="text-base leading-relaxed">
-                Hi! I’m Davide, a{' '}
-                <span className="font-medium text-neutral-200">
-                  Full-Stack Developer
-                </span>{' '}
-                with more than{' '}
-                <span className="font-medium text-neutral-200">
-                  5 years of experience
-                </span>
-                .
-              </p>
-            </FadeIn>
-            <FadeIn>
-              <p>
-                My journey into web development began during my university years
-                when I digged into mobile applications and websites. I was
-                captivated by the world of animations, 3D design, and surfing
-                through polished, user-friendly interfaces.
+                Hi! I’m Davide. I got hooked on web development at university,
+                tinkering with mobile apps and websites. What pulled me in were
+                the details: animations, 3D, and interfaces so polished they
+                feel effortless to use.
               </p>
             </FadeIn>
             <FadeIn>
               <p className="text-base leading-relaxed">
-                Fast-forward to today, and I’ve had the privilege of working at
-                a{' '}
-                <span className="font-medium text-neutral-200">
-                  huge corporation
-                </span>
-                , collaborated with an{' '}
-                <span className="font-medium text-neutral-200">
-                  early-stage start-up
-                </span>{' '}
-                and realized some{' '}
-                <span className="font-medium text-neutral-200">
-                  off-work websites
-                </span>{' '}
-                with a UI & UX Designer.
+                In 2018 I joined Accenture in Milan, where I’m now a{' '}
+                <Highlight>Senior Developer</Highlight>. I build websites and
+                back-end systems for{' '}
+                <Highlight>some of Europe’s largest banks</Highlight>: Angular
+                and Svelte front-ends, a Spring Boot platform of 40+
+                microservices serving 400+ bank branches, and the internal tools
+                that keep their data GDPR-compliant.
               </p>
             </FadeIn>
             <FadeIn>
               <p className="text-base leading-relaxed">
-                My main focus these days is{' '}
-                <span className="font-medium text-neutral-200">
-                  building accessible, inclusive products and digital
-                  experiences
-                </span>{' '}
-                at Accenture for a variety of clients.
+                Outside of work, I team up with a designer on{' '}
+                <Highlight>independent projects</Highlight>: websites for a
+                winery, a dental practice and an outdoor sports platform, from
+                the design system all the way to SvelteKit front-ends and a
+                Strapi and GraphQL back-end on AWS.
+              </p>
+            </FadeIn>
+            <FadeIn>
+              <p className="text-base leading-relaxed">
+                Wherever I work, I care about the same things:{' '}
+                <Highlight>accessible, inclusive interfaces</Highlight>, code
+                that’s easy to maintain, and helping the people on my team grow.
               </p>
             </FadeIn>
           </div>

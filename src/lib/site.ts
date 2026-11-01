@@ -34,7 +34,7 @@ export function pageMetadata({
           url: '/opengraph-image',
           width: 1200,
           height: 630,
-          alt: `${SITE_NAME} - Software Engineer`,
+          alt: `${SITE_NAME} - Senior Developer`,
         },
       ],
     },

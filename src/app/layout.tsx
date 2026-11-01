@@ -5,13 +5,13 @@ import Header from '@/components/Header';
 import { SITE_NAME, SITE_URL } from '@/lib/site';
 
 const description =
-  "I'm Davide, a software engineer based in Italy. Currently building accessible and inclusive products at Accenture.";
+  "I'm Davide Locatelli, a full-stack Senior Developer based in Italy, building accessible and inclusive web products at Accenture.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: `%s - ${SITE_NAME}`,
-    default: `${SITE_NAME} - Software Engineer`,
+    default: `${SITE_NAME} - Senior Developer`,
   },
   description,
   alternates: { canonical: '/' },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     locale: 'en_US',
     url: '/',
-    title: `${SITE_NAME} - Software Engineer`,
+    title: `${SITE_NAME} - Senior Developer`,
     description,
   },
   twitter: { card: 'summary_large_image' },
