@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/site';
 import Container from '@/components/Container';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 import icons from '@/data/resources/icons.json';
 import { Card, CardHeader } from '@/components/ui/Card';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
@@ -53,34 +54,45 @@ export default function IconsPage() {
   };
 
   return (
-    <FadeInStagger>
-      <Container>
-        <div className="flex flex-col space-y-8">
-          <div>
-            <FadeIn>
-              <PageTitle>Icons</PageTitle>
-            </FadeIn>
-            <FadeIn>
-              <PageDescription>
-                Below a list of my favorite icon sets.
-              </PageDescription>
-            </FadeIn>
-          </div>
+    <>
+      <PageBreadcrumb
+        items={[
+          { label: 'Resources', href: '/resources' },
+          { label: 'Icons', href: '/resources/icons' },
+        ]}
+      />
+      <FadeInStagger>
+        <Container>
+          <div className="flex flex-col space-y-8">
+            <div>
+              <FadeIn>
+                <PageTitle>Icons</PageTitle>
+              </FadeIn>
+              <FadeIn>
+                <PageDescription>
+                  Below a list of my favorite icon sets.
+                </PageDescription>
+              </FadeIn>
+            </div>
 
-          <div>
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-              {icons.map((icon) => (
-                <FadeIn key={icon.title} className="group">
-                  <a href={icon.link} target="_blank" className="relative">
-                    <span className="sr-only">{icon.description}</span>
-                    <IconCard title={icon.title} icon={iconsMap[icon.title]} />
-                  </a>
-                </FadeIn>
-              ))}
+            <div>
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
+                {icons.map((icon) => (
+                  <FadeIn key={icon.title} className="group">
+                    <a href={icon.link} target="_blank" className="relative">
+                      <span className="sr-only">{icon.description}</span>
+                      <IconCard
+                        title={icon.title}
+                        icon={iconsMap[icon.title]}
+                      />
+                    </a>
+                  </FadeIn>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
-    </FadeInStagger>
+        </Container>
+      </FadeInStagger>
+    </>
   );
 }

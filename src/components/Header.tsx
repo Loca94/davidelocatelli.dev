@@ -1,142 +1,19 @@
-'use client';
-
-import * as React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { Logo } from '@/components/Logos';
 import Container from '@/components/Container';
-import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn';
-import AboutPhoto from '@/images/about-photo.webp';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from '@/components/ui/Breadcrumb';
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { FadeIn } from '@/components/animations/FadeIn';
+import { FlipLogo } from '@/components/animations/FlipLogo';
 
-function FlipLogo({ pathname }: { pathname: string }) {
-  const isAboutPage = pathname === '/about';
-  let shouldReduceMotion = useReducedMotion();
-
-  // initial={false}: the logo is visible in the server HTML and only animates on route changes
-  return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={isAboutPage ? 'photo-container' : 'svg-container'}
-        initial={{
-          opacity: 0,
-          y: shouldReduceMotion ? 0 : 10,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.3,
-          ease: 'easeInOut',
-          type: 'spring',
-          stiffness: 100,
-          damping: 10,
-        }}
-        exit={{
-          opacity: 0,
-          y: shouldReduceMotion ? 0 : -30,
-          x: shouldReduceMotion ? 0 : 20,
-          filter: 'blur(8px)',
-          scale: shouldReduceMotion ? 1 : 1.5,
-          position: 'absolute',
-          transition: {
-            duration: 0.225,
-            ease: 'easeInOut',
-          },
-        }}
-      >
-        {isAboutPage ? (
-          <Image
-            className="rounded-full transition-opacity duration-300 hover:opacity-80"
-            src={AboutPhoto}
-            alt="My profile picture"
-            width={48}
-            height={40}
-          />
-        ) : (
-          <Logo className="group h-12 w-12 transition-all duration-300 ease-in-out" />
-        )}
-      </motion.div>
-    </AnimatePresence>
-  );
-}
-
+// The top padding shrinks on pages with a breadcrumb (see `.site-header` in tailwind.css)
 export default function Header() {
-  const paths = usePathname();
-  const pathNames = paths.split('/').filter((path) => path);
-
   return (
-    <header>
-      <Container
-        className={cn(
-          'space-y-4 pb-8 transition-all duration-500',
-          pathNames.length >= 2 ? 'pt-16' : 'pt-24',
-        )}
-      >
+    <header className="site-header">
+      <Container className="pt-24 pb-8 transition-all duration-500">
         <FadeIn>
           <Link href="/" className="block h-12 w-12">
             <div className="sr-only">Go to homepage</div>
-            <FlipLogo pathname={paths} />
+            <FlipLogo />
           </Link>
         </FadeIn>
-
-        {pathNames.length >= 2 && (
-          <FadeInStagger faster>
-            <Breadcrumb>
-              <BreadcrumbList>
-                <FadeIn>
-                  <BreadcrumbItem>
-                    <BreadcrumbLink asChild>
-                      <Link href="/">Home</Link>
-                    </BreadcrumbLink>
-                  </BreadcrumbItem>
-                </FadeIn>
-
-                {pathNames.map((pathSegment, index) => {
-                  const href = `/${pathNames.slice(0, index + 1).join('/')}`;
-                  const breadcrumbLabel =
-                    pathSegment[0].toUpperCase() +
-                    pathSegment.slice(1, pathSegment.length);
-                  const isLast = index === pathNames.length - 1;
-
-                  return (
-                    <React.Fragment key={index}>
-                      <FadeIn>
-                        <BreadcrumbSeparator>
-                          <span className="text-netural-950/25 dark:text-neutral-50/25">
-                            /
-                          </span>
-                        </BreadcrumbSeparator>
-                      </FadeIn>
-
-                      <FadeIn>
-                        <BreadcrumbItem>
-                          <BreadcrumbLink asChild isLast={isLast}>
-                            {isLast ? (
-                              <span>{breadcrumbLabel}</span>
-                            ) : (
-                              <Link href={href}>{breadcrumbLabel}</Link>
-                            )}
-                          </BreadcrumbLink>
-                        </BreadcrumbItem>
-                      </FadeIn>
-                    </React.Fragment>
-                  );
-                })}
-              </BreadcrumbList>
-            </Breadcrumb>
-          </FadeInStagger>
-        )}
       </Container>
     </header>
   );

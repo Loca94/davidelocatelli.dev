@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { pageMetadata } from '@/lib/site';
 import Container from '@/components/Container';
+import { PageBreadcrumb } from '@/components/PageBreadcrumb';
 import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import websites from '@/data/resources/websites.json';
@@ -12,26 +13,34 @@ export const metadata: Metadata = pageMetadata({
   path: '/resources/websites',
 });
 
-export default function IconsPage() {
+export default function WebsitesPage() {
   return (
-    <FadeInStagger>
-      <Container>
-        <div className="flex flex-col space-y-8">
-          <div>
-            <FadeIn>
-              <PageTitle>Websites</PageTitle>
-            </FadeIn>
-            <FadeIn>
-              <PageDescription>
-                Remarkable websites and portfolios I came across surfing the
-                web.
-              </PageDescription>
-            </FadeIn>
-          </div>
+    <>
+      <PageBreadcrumb
+        items={[
+          { label: 'Resources', href: '/resources' },
+          { label: 'Websites', href: '/resources/websites' },
+        ]}
+      />
+      <FadeInStagger>
+        <Container>
+          <div className="flex flex-col space-y-8">
+            <div>
+              <FadeIn>
+                <PageTitle>Websites</PageTitle>
+              </FadeIn>
+              <FadeIn>
+                <PageDescription>
+                  Remarkable websites and portfolios I came across surfing the
+                  web.
+                </PageDescription>
+              </FadeIn>
+            </div>
 
-          <ResourceLinkList data={websites} />
-        </div>
-      </Container>
-    </FadeInStagger>
+            <ResourceLinkList data={websites} />
+          </div>
+        </Container>
+      </FadeInStagger>
+    </>
   );
 }

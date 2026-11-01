@@ -45,6 +45,11 @@
   }
 }
 
+/* Pages with a breadcrumb (`PageBreadcrumb`) sit closer to the top */
+body:has([data-breadcrumb]) .site-header > div {
+  padding-top: --spacing(16);
+}
+
 .shadow-svg {
   filter: drop-shadow(0px 0px 6px theme('colors.emerald.300/60'));
 }
