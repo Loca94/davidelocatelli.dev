@@ -1,4 +1,6 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
+import animate from 'tailwindcss-animate';
 
 const config = {
   future: {
@@ -45,20 +47,17 @@ const config = {
     },
   },
   plugins: [
-    require('tailwindcss-animate'),
-    function ({ addUtilities }: { addUtilities: Function }) {
-      addUtilities(
-        {
-          '.stop-color-gray': {
-            'stop-color': '#525252',
-          },
-          '.stop-color-emerald': {
-            'stop-color': '#10B981',
-          },
+    animate,
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.stop-color-gray': {
+          'stop-color': '#525252',
         },
-        ['responsive', 'hover'],
-      );
-    },
+        '.stop-color-emerald': {
+          'stop-color': '#10B981',
+        },
+      });
+    }),
   ],
 } satisfies Config;
 
