@@ -8,7 +8,7 @@ import AboutPhoto from '@/images/about-photo.webp';
 
 export function FlipLogo() {
   const isAboutPage = usePathname() === '/about';
-  let shouldReduceMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
 
   // initial={false}: the logo is visible in the server HTML and only animates on route changes
   return (

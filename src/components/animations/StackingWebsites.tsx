@@ -55,7 +55,7 @@ const StackingWebsites = ({
   const CARD_OFFSET = offset || 18;
   const SCALE_FACTOR = scaleFactor || 0.15;
   const [cards, setCards] = useState<WebsiteCard[]>(websites);
-  let shouldReduceMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (shouldReduceMotion) return;
@@ -81,7 +81,7 @@ const StackingWebsites = ({
               transformOrigin: 'top center',
             }}
             animate={{
-              top: index * -CARD_OFFSET,
+              y: index * -CARD_OFFSET,
               scale: 1 - index * SCALE_FACTOR, // decrease scale for cards that are behind
               zIndex: cards.length - index, //  decrease z-index for the cards that are behind
             }}

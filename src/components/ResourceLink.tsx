@@ -55,7 +55,7 @@ function MetadataCard({
         );
         const data = await res.json();
         setMetadata(data);
-      } catch (error: any) {
+      } catch (error) {
         if (error instanceof Error) {
           if (error.name === 'AbortError') return; // request was cancelled
           console.error('Failed to load metadata', error);
@@ -80,11 +80,11 @@ function MetadataCard({
     <motion.div
       initial={false}
       animate={{
-        top: cardPosition.top,
+        y: cardPosition.top,
         opacity: cardPosition.visible ? 1 : 0,
       }}
       transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-      className="hidden lg:absolute lg:left-full lg:ml-6 lg:block"
+      className="hidden lg:absolute lg:top-0 lg:left-full lg:ml-6 lg:block"
     >
       <Card className="w-72 dark:bg-neutral-900/70">
         {isMetadataLoading || !metadata ? (
