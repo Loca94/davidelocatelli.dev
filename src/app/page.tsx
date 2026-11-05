@@ -44,6 +44,12 @@ const structuredData = {
         'https://www.linkedin.com/in/davide-locatelli-dev/',
         'https://github.com/Loca94/',
       ],
+      subjectOf: {
+        '@type': 'DigitalDocument',
+        name: `${SITE_NAME} - Resume`,
+        url: `${SITE_URL}/resume.pdf`,
+        encodingFormat: 'application/pdf',
+      },
     },
   ],
 };
@@ -66,7 +72,8 @@ export default function Home() {
               Senior Developer at{' '}
               <span className="transition duration-300 hover:underline hover:decoration-neutral-200 hover:underline-offset-2 dark:hover:text-neutral-300 dark:hover:decoration-emerald-500">
                 Accenture
-              </span>{'  '}
+              </span>
+              {'  '}
               <AccentureLogo
                 aria-hidden="true"
                 className="mb-0.5 inline-block h-3 w-3 text-[#A100FF]"
@@ -133,7 +140,7 @@ export default function Home() {
             <FadeIn>
               <li>
                 <a
-                  href="/Davide_Locatelli_-_Resume.pdf"
+                  href="/resume.pdf"
                   className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-500"
                   target="_blank"
                   rel="noopener noreferrer"
