@@ -45,6 +45,43 @@
   }
 }
 
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animated-border {
+  background: conic-gradient(
+    from var(--border-angle),
+    #fff,
+    transparent 60deg,
+    transparent 300deg,
+    #fff
+  );
+  animation: border-spin 4s linear infinite;
+}
+
+.animated-border-highlight {
+  background: radial-gradient(
+    75% 181.16% at 50% 50%,
+    #00bc7d 0%,
+    transparent 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-border {
+    animation: none;
+  }
+}
+
 /* Pages with a breadcrumb (`PageBreadcrumb`) sit closer to the top */
 body:has([data-breadcrumb]) .site-header > div {
   padding-top: --spacing(16);
