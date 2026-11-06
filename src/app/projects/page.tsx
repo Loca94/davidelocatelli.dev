@@ -57,6 +57,7 @@ function ProjectCard({
           </div>
         </CardHeader>
       </Card>
+      <span className="sr-only"> (opens in new tab)</span>
     </a>
   );
 }

@@ -79,12 +79,18 @@ export default function IconsPage() {
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 {icons.map((icon) => (
                   <FadeIn key={icon.title} className="group">
-                    <a href={icon.link} target="_blank" className="relative">
+                    <a
+                      href={icon.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative"
+                    >
                       <span className="sr-only">{icon.description}</span>
                       <IconCard
                         title={icon.title}
                         icon={iconsMap[icon.title]}
                       />
+                      <span className="sr-only"> (opens in new tab)</span>
                     </a>
                   </FadeIn>
                 ))}

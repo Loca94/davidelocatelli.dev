@@ -68,11 +68,13 @@ export default function Home() {
               className="block w-fit font-medium text-neutral-400 dark:text-neutral-500"
               href="https://www.accenture.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               Senior Developer at{' '}
               <span className="transition duration-300 hover:underline hover:decoration-neutral-200 hover:underline-offset-2 dark:hover:text-neutral-300 dark:hover:decoration-emerald-500">
                 Accenture
               </span>
+              <span className="sr-only"> (opens in new tab)</span>
               {'  '}
               <AccentureLogo
                 aria-hidden="true"
@@ -146,6 +148,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   Resume
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               </li>
             </FadeIn>
@@ -154,9 +157,11 @@ export default function Home() {
                 <a
                   href="https://www.linkedin.com/in/davide-locatelli-dev/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-500"
                 >
                   LinkedIn
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               </li>
             </FadeIn>
@@ -165,9 +170,11 @@ export default function Home() {
                 <a
                   href="https://github.com/Loca94/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-fit py-2 font-medium text-neutral-400 transition duration-300 hover:text-emerald-600 dark:text-neutral-600 dark:hover:text-emerald-500"
                 >
                   Github
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               </li>
             </FadeIn>

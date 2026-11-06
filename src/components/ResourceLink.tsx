@@ -177,6 +177,7 @@ function ResourceLinkList({ data }: { data: Resource[] }) {
               <a
                 href={item.link}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="group flex flex-col transition-colors duration-300"
               >
                 <div className="flex items-center font-medium text-neutral-700 transition duration-300 group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100">
@@ -187,6 +188,7 @@ function ResourceLinkList({ data }: { data: Resource[] }) {
                 <p className="text-neutral-400 transition duration-300 dark:text-neutral-400 dark:group-hover:text-neutral-300">
                   {item.description}
                 </p>
+                <span className="sr-only"> (opens in new tab)</span>
               </a>
             </div>
           </FadeIn>
