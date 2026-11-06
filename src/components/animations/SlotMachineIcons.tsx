@@ -1,8 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'motion/react';
-import { IconName } from '@/lib/types';
-import { RandomIconComponents } from '@/lib/generateRandomIcons';
+import { IconName, RandomIconComponents } from '@/lib/generateRandomIcons';
 
 type ReelProps = {
   spinningIcons: IconName[];
@@ -11,7 +10,7 @@ type ReelProps = {
 };
 
 const Reel = ({ spinningIcons, spinDuration, delay }: ReelProps) => {
-  let shouldReduceMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div className="relative m-1.5 h-32 w-16 overflow-hidden rounded-lg border-2 border-neutral-600/50 bg-neutral-950 md:m-3">
@@ -32,10 +31,6 @@ const Reel = ({ spinningIcons, spinDuration, delay }: ReelProps) => {
       >
         {spinningIcons.map((iconName, index) => {
           const Icon = RandomIconComponents[iconName];
-          if (!Icon) {
-            console.warn(`Icon "${iconName}" not found in IconComponents.`);
-            return null;
-          }
 
           return (
             <div key={index} className="flex h-16 items-center justify-center">

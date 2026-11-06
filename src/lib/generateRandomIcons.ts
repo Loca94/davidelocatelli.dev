@@ -1,3 +1,4 @@
+import type { ComponentType, ComponentPropsWithoutRef } from 'react';
 import {
   AddressBookTabsIcon,
   AirplaneIcon,
@@ -40,7 +41,6 @@ import {
   WindmillIcon,
   YarnIcon,
 } from '@/components/Icons';
-import { IconName } from './types';
 
 const iconList = [
   { name: 'AddressBookTabsIcon', component: AddressBookTabsIcon },
@@ -85,9 +85,11 @@ const iconList = [
   { name: 'YarnIcon', component: YarnIcon },
 ] as const;
 
+export type IconName = (typeof iconList)[number]['name'];
+
 export const RandomIconComponents = Object.fromEntries(
   iconList.map(({ name, component }) => [name, component]),
-);
+) as Record<IconName, ComponentType<ComponentPropsWithoutRef<'svg'>>>;
 
 export function generateRandomIcons(count: number): IconName[] {
   return Array.from(
