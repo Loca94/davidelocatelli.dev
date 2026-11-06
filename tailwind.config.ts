@@ -1,6 +1,5 @@
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
-import animate from 'tailwindcss-animate';
 
 const config = {
   future: {
@@ -47,7 +46,6 @@ const config = {
     },
   },
   plugins: [
-    animate,
     plugin(({ addUtilities }) => {
       addUtilities({
         '.stop-color-gray': {
