@@ -6,7 +6,6 @@ import { FadeInStagger, FadeIn } from '@/components/animations/FadeIn';
 import { PageDescription, PageTitle } from '@/components/ui/PageLayout';
 import StackingWebsites from '@/components/animations/StackingWebsites';
 import SlotMachineIcons from '@/components/animations/SlotMachineIcons';
-import MorphingButton from '@/components/animations/MorphingButton';
 import { generateRandomIcons } from '@/lib/generateRandomIcons';
 import { DotPattern } from '@/components/patterns/DotPattern';
 
@@ -46,7 +45,7 @@ export default function ResourcesPage() {
           <FadeIn>
             <Link href="/resources/icons" className="group">
               <div className="relative mb-3 flex h-40 w-full max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-lg border border-emerald-300/50 bg-emerald-100 transition duration-300 sm:h-48 sm:max-w-xl dark:border-neutral-700 dark:bg-neutral-900/30">
-                <DotPattern className="[mask-image:radial-gradient(250px_circle_at_center,transparent,transparent,white)] opacity-50" />
+                <DotPattern className="mask-[radial-gradient(250px_circle_at_center,transparent,transparent,white)] opacity-50" />
                 <SlotMachineIcons reels={reels} />
               </div>
               <div>
@@ -63,7 +62,7 @@ export default function ResourcesPage() {
           <FadeIn>
             <Link href="/resources/websites" className="group">
               <div className="relative mb-3 flex h-40 w-full max-w-[calc(100vw-3rem)] justify-center overflow-hidden rounded-lg border border-emerald-300/50 bg-emerald-100 px-4 py-8 sm:h-48 sm:max-w-xl dark:border-neutral-700 dark:bg-neutral-900/30">
-                <DotPattern className="[mask-image:linear-gradient(to_bottom,white,transparent,transparent)] opacity-50" />
+                <DotPattern className="mask-[linear-gradient(to_bottom,white,transparent,transparent)] opacity-50" />
                 <StackingWebsites />
               </div>
               <div>
